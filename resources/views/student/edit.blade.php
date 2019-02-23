@@ -21,7 +21,11 @@
             </div>
         </div>
         <div class="col-md-8 container">
-            <h3>Edit Record for {{$students->firstname}}&nbsp;{{$students->lastname}}</h3>
+            <h3>Edit Record for {{$students->firstname}}&nbsp;{{$students->lastname}}
+                <div class="pull-right">
+                    <a href="{{url('student')}}"><button class="btn btn-sm btn-primary"><i class="fa fa-home"></i>&nbsp;Home</button></a>
+                </div>
+            </h3>
             <form class="form" method="post" action="{{action('StudentController@update', $id)}}">
             @csrf
                 <input type="hidden" name="_method" value="PATCH">

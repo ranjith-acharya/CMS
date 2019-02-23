@@ -21,7 +21,12 @@
             </div>
         </div>
         <div class="col-md-8 container">
-            <h3>Information about {{$students->lastname}}&nbsp;{{$students->firstname}}<div class="pull-right"><a href="{{action('StudentController@edit', $id)}}"><button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i>&nbsp;Edit</button></a></div></h3>
+            <h3>Information about {{$students->lastname}}&nbsp;{{$students->firstname}}
+                <div class="pull-right">
+                    <a href="{{url('student')}}"><button class="btn btn-sm btn-primary"><i class="fa fa-home"></i>&nbsp;Home</button></a>
+                    <a href="{{action('StudentController@edit', $id)}}"><button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i>&nbsp;Edit</button></a>
+                </div>
+            </h3>
             <div class="row">
                 <div class="col-md-3">
                     <img src="../image/{{$students->avatar}}" width="120px" height="120px" class="img-responsive rounded-circle">

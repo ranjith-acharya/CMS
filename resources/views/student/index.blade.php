@@ -39,8 +39,8 @@
                                 <div class="dropdown text-center">
                                     <button class="btn btn-white dropdown-toggler" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{action('StudentController@edit', $student->id)}}">Edit</a>
-                                        <a class="dropdown-item" href="{{action('StudentController@show', $student->id)}}">View</a>
+                                        <a class="dropdown-item" href="{{action('StudentController@edit', $student->id)}}"><i class="fa fa-edit"></i>&nbsp;Edit</a>
+                                        <a class="dropdown-item" href="{{action('StudentController@show', $student->id)}}"><i class="fa fa-eye"></i>&nbsp;View</a>
                                     </div>
                                 </div>
                             </td>
