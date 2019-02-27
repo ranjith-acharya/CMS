@@ -29,7 +29,8 @@
         </div>
         <div class="col-md-8">
             <div class="card card-body">
-                <span><input type="text" id="myInput" class="form-control pull-right col-md-5" onkeyup="myFunction()" placeholder="Search for Students. . ."></span>
+                <span><a href="{{url('home')}}"><button class="btn btn-sm btn-primary"><i class="fa fa-home"></i>&nbsp;Home</button></a>
+                <input type="text" id="myInput" class="form-control pull-right col-md-5" onkeyup="myFunction()" placeholder="Search for Students. . ."></span>
                 <br><table id="myTable" class="table table-bordered table-responsive-lg">
                     <thead class="bg-dark text-white"><tr>
                         <th>Name</th>

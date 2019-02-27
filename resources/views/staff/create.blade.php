@@ -25,6 +25,7 @@
                 Name : <h3>{{Auth::user()->name}}</h3>
                 Email : <h4>{{Auth::user()->email}}</h4>
                 Created at : <h5>{{Auth::user()->created_at}}</h5>
+                <a href="{{url('home')}}"><button class="btn btn-sm btn-primary"><i class="fa fa-home"></i></button></a>
             </div>
         </div>
         <div class="col-md-8 container">

@@ -30,11 +30,15 @@
         <div class="col-md-4">
             <div class="card card-body">
             Total Staff : <h1 class="text-center">{{$staffsCount}}</h1>
+            <span class="form-inline"><a href="{{url('staff')}}"><button class="btn btn-sm btn-primary mr-2">View Staff</button></a>
+            <a href="{{route('staff.create')}}"><button class="btn btn-sm btn-primary">Create Staff</button></a></span>
             </div>
         </div>
         <div class="col-md-4">
             <div class="card card-body">
                 Total Student : <h1 class="text-center">{{$studentsCount}}</h1>
+                <span class="form-inline"><a href="{{url('student')}}"><button class="btn btn-sm btn-primary mr-2">View Student</button></a>
+                <a href="{{route('student.create')}}"><button class="btn btn-sm btn-primary">Create Staff</button></a></span>
             </div>
         </div>
     </div>

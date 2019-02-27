@@ -109,7 +109,16 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $staffs = Staff::find($id);
+        $staffs -> firstname = $request->get('firstname');
+        $staffs -> lastname = $request->get('lastname');
+        $staffs -> address = $request->get('address');
+        $staffs -> landmark = $request->get('landmark');
+        $staffs -> city = $request->get('city');
+        $staffs -> pincode = $request->get('pincode');
+        $staffs -> contact = $request->get('contact');
+        $staffs -> save();
+        return redirect('staff');
     }
 
     /**

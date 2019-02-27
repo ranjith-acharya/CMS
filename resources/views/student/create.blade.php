@@ -25,30 +25,62 @@
                 Name : <h3>{{Auth::user()->name}}</h3>
                 Email : <h4>{{Auth::user()->email}}</h4>
                 Created at : <h5>{{Auth::user()->created_at}}</h5>
+                <a href="{{url('home')}}"><button class="btn btn-sm btn-primary"><i class="fa fa-home"></i></button></a>
             </div>
         </div>
-        <div class="col-md-8 container">
+        <div class="col-md-8">
             <h3>New Record for student</h3>
             <form class="form" method="post" action="{{url('student')}}" enctype="multipart/form-data">
             @csrf
                 <div class="form-group">
                     <input type="text" name="admission" class="form-control col-md-9" placeholder="Admission No">
+                    @if($errors->has('admission'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('admission')}}</strong>
+                    @endif
                 </div>
                 <div class="form-group form-inline">
                     <input type="text" name="firstname" class="col-md-4  mr-1 form-control" placeholder="First Name">
                     <input type="text" name="lastname" class="col-md-5 form-control" placeholder="Last Name">
+                <span class="form-inline">
+                <span class="mr-3"><span class="mr-5">@if($errors->has('firstname'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('firstname')}}</strong>
+                    @endif</span></span>
+                    @if($errors->has('lastname'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('lastname')}}</strong>
+                    @endif
+                </span>
                 </div>
                 <div class="form-group form-inline">
-                    <input type="text" name="email" class="col-md-5 mr-1 form-control" placeholder="E-Mail Address">
-                    <input type="password" name="password" class="col-md-4 form-control" placeholder="Password">
+                    <input type="text" name="email" class="col-md-4 mr-1 form-control" placeholder="E-Mail Address">
+                    <input type="password" name="password" class="col-md-5 form-control" placeholder="Password">
+                <span class="form-inline">
+                <span class="mr-5"><span class="mr-5">@if($errors->has('email'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('email')}}</strong>
+                    @endif</span></span>
+                    @if($errors->has('password'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('password')}}</strong>
+                    @endif
+                </span>
                 </div>
                 <div class="form-group">
                     <input type="text" name="address" class="form-control col-md-9" placeholder="Address Line 1">
+                    @if($errors->has('address'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('address')}}</strong>
+                    @endif
                 </div>
                 <div class="form-group form-inline">
                     <input type="text" name="landmark" class="col-md-3 mr-1 form-control" placeholder="Landmark">
                     <input type="text" name="city" class="col-md-3 mr-1 form-control" placeholder="City">
                     <input type="text" name="pincode" class="col-md-3 form-control" placeholder="Pincode">
+                    <span class="mr-1">@if($errors->has('landmark'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('landmark')}}</strong>
+                    @endif</span>
+                    <span class="mr-1">@if($errors->has('city'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('city')}}</strong>
+                    @endif</span>
+                    @if($errors->has('pincode'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('pincode')}}</strong>
+                    @endif
                 </div>
                 <div class="form-group form-inline">
                     <input type="date" name="birth" class="col-md-3  mr-1 form-control" placeholder="Date of Birth">
@@ -60,6 +92,15 @@
                         <option value="T.E">Third Year</option>
                         <option value="B.E">Final Year</option>
                     </select>
+                    <span class="mr-1">@if($errors->has('birth'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('birth')}}</strong>
+                    @endif</span>
+                    <span class="mr-1">@if($errors->has('contact'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('contact')}}</strong>
+                    @endif</span>
+                    @if($errors->has('year'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('year')}}</strong>
+                    @endif
                 </div>
                 <div class="form-group form-inline">
                     <select name="branch" class="col-md-3 mr-1 form-control">
@@ -77,6 +118,15 @@
                         <option value="Male">Male</option>
                     </select>
                     <input type="file" name="avatar" class="col-md-3" placeholder="Avatar" style="outline:none;" accept="image/*">
+                    <span class="mr-1">@if($errors->has('branch'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('branch')}}</strong>
+                    @endif</span>
+                    <span class="mr-1">@if($errors->has('gender'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('gender')}}</strong>
+                    @endif</span>
+                    @if($errors->has('avatar'))
+                        <strong class="text-danger text-capitalize">{{$errors->first('avatar')}}</strong>
+                    @endif
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-success">
