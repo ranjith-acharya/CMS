@@ -5,6 +5,6 @@ Engineering College Management System has 3 roles <br>
 • Admin <br>
 • Staff <br>
 • Student <br><br>
-The Project CMS (College Management System) is implemented by - <hr>
+The Project CMS (College Management System) is implemented by - <br>
 • PHP framework Laravel<br>
 • Database - PHPmyAdmin<br>
