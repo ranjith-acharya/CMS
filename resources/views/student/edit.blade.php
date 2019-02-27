@@ -8,6 +8,13 @@
         <a class="dropdown-item" href="{{route('student.index')}}">View all</a>
     </div>
 </li>
+<li class="nav-item dropdown">
+    <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown">Staff</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="{{route('staff.create')}}">New Record</a>
+        <a class="dropdown-item" href="{{route('staff.index')}}">View all</a>
+    </div>
+</li>
 @endsection
 
 @section('content')

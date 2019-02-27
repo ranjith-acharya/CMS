@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Student;
+use App\Staff;
 use Hash;
-class StudentController extends Controller
+class StaffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-        return view('student/index',compact('students'));
+        $staffs = Staff::all();
+        return view('staff/index',compact('staffs'));
     }
 
     /**
@@ -25,7 +25,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student/create');
+        return view('staff/create');
     }
 
     /**
@@ -37,7 +37,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'admission' => 'required',
+            'username' => 'required',
             'firstname' => 'required',
             'lastname' => 'required',
             'email' => 'required',
@@ -48,7 +48,6 @@ class StudentController extends Controller
             'pincode' => 'required',
             'birth' => 'required',
             'contact' => 'required',
-            'year' => 'required',
             'branch' => 'required',
             'gender' => 'required',
             'avatar' => 'required'
@@ -56,26 +55,25 @@ class StudentController extends Controller
         if($request->hasfile('avatar')){
             $file = $request->file('avatar');
             $name = $file->getClientOriginalName();
-            $file -> move(public_path().'/image/student', $name);
+            $file -> move(public_path().'/image/staff',$name);
         }
-        $students = new Student;
-        $students -> admission = $request->get('admission');
-        $students -> firstname = $request->get('firstname');
-        $students -> lastname = $request->get('lastname');
-        $students -> email = $request->get('email');
-        $students -> password = Hash::make($request->get('password'));
-        $students -> address = $request->get('address');
-        $students -> landmark = $request->get('landmark');
-        $students -> city = $request->get('city');
-        $students -> pincode = $request->get('pincode');
-        $students -> birth = $request->get('birth');
-        $students -> contact = $request->get('contact');
-        $students -> year = $request->get('year');
-        $students -> branch = $request->get('branch');
-        $students -> gender = $request->get('gender');
-        $students -> avatar = $name;
-        $students -> save();
-        return redirect('student');
+        $staffs = new Staff;
+        $staffs -> username = $request->get('username');
+        $staffs -> firstname = $request->get('firstname');
+        $staffs -> lastname = $request->get('lastname');
+        $staffs -> email = $request->get('email');
+        $staffs -> password = Hash::make($request->get('password'));
+        $staffs -> address = $request->get('address');
+        $staffs -> landmark = $request->get('landmark');
+        $staffs -> city = $request->get('city');
+        $staffs -> pincode = $request->get('pincode');
+        $staffs -> birth = $request->get('birth');
+        $staffs -> contact = $request->get('contact');
+        $staffs -> branch = $request->get('branch');
+        $staffs -> gender = $request->get('gender');
+        $staffs -> avatar = $name;
+        $staffs -> save();
+        return redirect('staff');
     }
 
     /**
@@ -86,8 +84,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        $students = Student::find($id);
-        return view('student/view',compact('students','id'));
+        $staffs = Staff::find($id);
+        return view('staff/view',compact('staffs', 'id'));
     }
 
     /**
@@ -98,8 +96,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        $students = Student::find($id);
-        return view('student/edit',compact('students','id'));
+        $staffs = Staff::find($id);
+        return view('staff/edit',compact('staffs', 'id'));
     }
 
     /**
@@ -111,17 +109,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $students = Student::find($id);
-        $students -> firstname = $request->get('firstname');
-        $students -> lastname = $request->get('lastname');
-        $students -> address = $request->get('address');
-        $students -> landmark = $request->get('landmark');
-        $students -> city = $request->get('city');
-        $students -> pincode = $request->get('pincode');
-        $students -> contact = $request->get('contact');
-        $students -> year = $request->get('year');
-        $students -> save();
-        return redirect('student');
+        //
     }
 
     /**

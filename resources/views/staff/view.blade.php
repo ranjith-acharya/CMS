@@ -28,39 +28,39 @@
             </div>
         </div>
         <div class="col-md-8 container">
-            <h3>Information about {{$students->lastname}}&nbsp;{{$students->firstname}}
+            <h3>Information about Prof. {{$staffs->lastname}}&nbsp;{{$staffs->firstname}}
                 <div class="pull-right">
-                    <a href="{{url('student')}}"><button class="btn btn-sm btn-primary"><i class="fa fa-home"></i>&nbsp;Home</button></a>
-                    <a href="{{action('StudentController@edit', $id)}}"><button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i>&nbsp;Edit</button></a>
+                    <a href="{{url('staff')}}"><button class="btn btn-sm btn-primary"><i class="fa fa-home"></i>&nbsp;Home</button></a>
+                    <a href="{{action('StaffController@edit', $id)}}"><button class="btn btn-sm btn-primary"><i class="fa fa-edit"></i>&nbsp;Edit</button></a>
                 </div>
             </h3>
             <div class="row">
                 <div class="col-md-3">
-                    <img src="../image/student/{{$students->avatar}}" width="120px" height="120px" class="img-responsive rounded-circle">
+                    <img src="../image/staff/{{$staffs->avatar}}" width="120px" height="120px" class="img-responsive rounded-circle">
                 </div>
                 <div class="col-md-6">
                     <table class="table table-borderless">
                         <tbody>
                             <tr>
-                                <td class="lead"><span class="font-weight-bold">Admission No</span> : {{$students->admission}}</td>
+                                <td class="lead"><span class="font-weight-bold">User Name</span> : {{$staffs->username}}</td>
                             </tr>
                             <tr>
-                                <td class="lead"><span class="font-weight-bold">Branch</span> : {{$students->year}}.&nbsp;{{$students->branch}}</td>
+                                <td class="lead"><span class="font-weight-bold">Branch</span> : {{$staffs->branch}}</td>
                             </tr>
                             <tr>
-                                <td class="lead"><span class="font-weight-bold">Email</span> : {{$students->email}}</td>
+                                <td class="lead"><span class="font-weight-bold">Email</span> : {{$staffs->email}}</td>
                             </tr>
                             <tr>
-                                <td class="lead"><span class="font-weight-bold">Date of Birth</span> : {{$students->birth}}</td>
+                                <td class="lead"><span class="font-weight-bold">Date of Birth</span> : {{$staffs->birth}}</td>
                             </tr>
                             <tr>
-                                <td class="lead"><span class="font-weight-bold">Address</span> : {{$students->address}}&nbsp;{{$students->landmark}},&nbsp;{{$students->city}},&nbsp{{$students->pincode}}.</td>
+                                <td class="lead"><span class="font-weight-bold">Address</span> : {{$staffs->address}}&nbsp;{{$staffs->landmark}},&nbsp;{{$staffs->city}},&nbsp{{$staffs->pincode}}.</td>
                             </tr>
                             <tr>
-                                <td class="lead"><span class="font-weight-bold">Contact</span> : {{$students->contact}}</td>
+                                <td class="lead"><span class="font-weight-bold">Contact</span> : {{$staffs->contact}}</td>
                             </tr>
                             <tr>
-                                <td class="lead"><span class="font-weight-bold">Gender</span> : {{$students->gender}}</td>
+                                <td class="lead"><span class="font-weight-bold">Gender</span> : {{$staffs->gender}}</td>
                             </tr>
                         </tbody>
                     </table>

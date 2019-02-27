@@ -29,25 +29,25 @@
         </div>
         <div class="col-md-8">
             <div class="card card-body">
-                <span><input type="text" id="myInput" class="form-control pull-right col-md-5" onkeyup="myFunction()" placeholder="Search for Students. . ."></span>
+                <span><input type="text" id="myInput" class="form-control pull-right col-md-5" onkeyup="myFunction()" placeholder="Search for Staffs. . ."></span>
                 <br><table id="myTable" class="table table-bordered table-responsive-lg">
                     <thead class="bg-dark text-white"><tr>
                         <th>Name</th>
-                        <th>Admission No</th>
+                        <th>User Name</th>
                         <th>Branch</th>
                         <th>Action</th>
                     </thead></tr><tbody>
-                    @foreach($students as $student)
+                    @foreach($staffs as $staff)
                         <tr>
-                            <td>{{$student->firstname}}&nbsp;{{$student->lastname}}</td>
-                            <td>{{$student->admission}}</td>
-                            <td>{{$student->branch}}</td>
+                            <td>Prof. {{$staff->firstname}}&nbsp;{{$staff->lastname}}</td>
+                            <td>{{$staff->username}}</td>
+                            <td>{{$staff->branch}}</td>
                             <td>
                                 <div class="dropdown text-center">
                                     <button class="btn btn-white dropdown-toggler" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{action('StudentController@edit', $student->id)}}"><i class="fa fa-edit"></i>&nbsp;Edit</a>
-                                        <a class="dropdown-item" href="{{action('StudentController@show', $student->id)}}"><i class="fa fa-eye"></i>&nbsp;View</a>
+                                        <a class="dropdown-item" href="{{action('StaffController@edit', $staff->id)}}"><i class="fa fa-edit"></i>&nbsp;Edit</a>
+                                        <a class="dropdown-item" href="{{action('StaffController@show', $staff->id)}}"><i class="fa fa-eye"></i>&nbsp;View</a>
                                     </div>
                                 </div>
                             </td>

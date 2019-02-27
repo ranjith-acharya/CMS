@@ -28,11 +28,11 @@
             </div>
         </div>
         <div class="col-md-8 container">
-            <h3>New Record for student</h3>
-            <form class="form" method="post" action="{{url('student')}}" enctype="multipart/form-data">
+            <h3>New Record for Staff</h3>
+            <form class="form" method="post" action="{{url('staff')}}" enctype="multipart/form-data">
             @csrf
                 <div class="form-group">
-                    <input type="text" name="admission" class="form-control col-md-9" placeholder="Admission No">
+                    <input type="text" name="username" class="form-control col-md-9" placeholder="User Name">
                 </div>
                 <div class="form-group form-inline">
                     <input type="text" name="firstname" class="col-md-4  mr-1 form-control" placeholder="First Name">
@@ -51,15 +51,8 @@
                     <input type="text" name="pincode" class="col-md-3 form-control" placeholder="Pincode">
                 </div>
                 <div class="form-group form-inline">
-                    <input type="date" name="birth" class="col-md-3  mr-1 form-control" placeholder="Date of Birth">
-                    <input type="text" name="contact" class="col-md-3 mr-1 form-control" placeholder="Contact Number">
-                    <select name="year" class="col-md-3 form-control">
-                        <option value="">-- Year --</option>
-                        <option value="F.E">First Year</option>
-                        <option value="S.E">Second Year</option>
-                        <option value="T.E">Third Year</option>
-                        <option value="B.E">Final Year</option>
-                    </select>
+                    <input type="date" name="birth" class="col-md-5  mr-1 form-control" placeholder="Date of Birth">
+                    <input type="text" name="contact" class="col-md-4 mr-1 form-control" placeholder="Contact Number">
                 </div>
                 <div class="form-group form-inline">
                     <select name="branch" class="col-md-3 mr-1 form-control">
