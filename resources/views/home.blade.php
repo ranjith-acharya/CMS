@@ -15,6 +15,13 @@
         <a class="dropdown-item" href="{{route('staff.index')}}">View all</a>
     </div>
 </li>
+<li class="nav-item dropdown">
+    <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown">Search</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="">Staff Record</a>
+        <a class="dropdown-item" href="">Student Record</a>
+    </div>
+</li>
 @endsection
 
 @section('content')
@@ -38,7 +45,7 @@
             <div class="card card-body">
                 Total Student : <h1 class="text-center">{{$studentsCount}}</h1>
                 <span class="form-inline"><a href="{{url('student')}}"><button class="btn btn-sm btn-primary mr-2">View Student</button></a>
-                <a href="{{route('student.create')}}"><button class="btn btn-sm btn-primary">Create Staff</button></a></span>
+                <a href="{{route('student.create')}}"><button class="btn btn-sm btn-primary">Create Student</button></a></span>
             </div>
         </div>
     </div>
