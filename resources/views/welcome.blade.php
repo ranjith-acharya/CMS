@@ -7,14 +7,14 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap&subset=latin-ext,vietnamese" rel="stylesheet">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Quicksand', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
