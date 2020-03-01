@@ -106,7 +106,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+		$student = Student::find($id);
+        return view('student.edit', compact('student', 'id'));
     }
 
     /**
@@ -118,7 +119,35 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+			'firstName' => 'required',
+			'fatherName' => 'required',
+			'motherName' => 'required',
+			'lastName' => 'required',
+			'address' => 'required',
+			'contact1' => 'required',
+			'contact2' => 'required',
+			'branch' => 'required',
+			'year' => 'required',
+		]);
+		$student = Student::find($id);
+		$student -> firstName = $request->get('firstName');
+		$student -> fatherName = $request->get('fatherName');
+		$student -> motherName = $request->get('motherName');
+		$student -> lastName = $request->get('lastName');
+		$student -> address = $request->get('address');
+		$student -> contact1 = $request->get('contact1');
+		$student -> contact2 = $request->get('contact2');
+		if($request->hasfile('avatar')){
+			$file = $request->file('avatar');
+            $name = time().'.'.$file->getClientOriginalExtension();
+            $file -> move(public_path().'/img/avatar/student/', $name);
+            $student -> avatar = $name;
+		}
+		$student -> branch = $request->get('branch');
+		$student -> year = $request->get('year');
+		$student -> save();
+		return redirect()->back()->with('success', 'Successfully Updated!');
     }
 
     /**
