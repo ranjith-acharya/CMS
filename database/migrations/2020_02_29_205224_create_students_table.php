@@ -26,6 +26,7 @@ class CreateStudentsTable extends Migration
 			$table->string('contact1');
 			$table->string('contact2');
 			$table->string('birth');
+			$table->string('age');
 			$table->string('gender');
 			$table->string('year');
 			$table->string('branch');
