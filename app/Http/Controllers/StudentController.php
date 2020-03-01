@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Hash;
+use Carbon\Carbon;
 use App\Student;
 
 class StudentController extends Controller
@@ -19,7 +20,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+		$studentsCount = Student::count();
+		$students = Student::all();
+        return view('student.index',compact('studentsCount', 'students'));
     }
 
     /**
@@ -47,7 +50,6 @@ class StudentController extends Controller
 			'lastName' => 'required',
 			'admissionNo' => 'required',
 			'email' => 'required',
-			'password' => 'required',
 			'address' => 'required',
 			'contact1' => 'required',
 			'contact2' => 'required',
@@ -64,11 +66,13 @@ class StudentController extends Controller
 		$student -> lastName = $request->get('lastName');
 		$student -> admissionNo = $request->get('admissionNo');
 		$student -> email = $request->get('email');
-		$student -> password = Hash::make($request->get('password'));
+		$student -> password = Hash::make($request->get('admissionNo'));
 		$student -> address = $request->get('address');
 		$student -> contact1 = $request->get('contact1');
 		$student -> contact2 = $request->get('contact2');
-		$student -> birth = $request->get('birth');
+		$birth = Carbon::parse($request->get('birth'));
+		$student -> birth = $birth;
+		$student -> age = $birth->age;
 		$student -> gender = $request->get('gender');
 		$student -> branch = $request->get('branch');
 		$student -> year = $request->get('year');
@@ -90,7 +94,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+		$student = Student::find($id);
+        return view('student.view', compact('student', 'id'));
     }
 
     /**
