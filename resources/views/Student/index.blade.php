@@ -5,6 +5,18 @@
 
 @section('content')
 <div class="container">
+	@if(session('success'))
+		<div class="alert alert-success alert-dismissible fade show">
+		<button class="close" data-dismiss="alert">&times;</button>
+			{{session('success')}}
+		</div>
+	@endif
+	@if(session('error'))
+		<div class="alert alert-danger alert-dismissible fade show">
+		<button class="close" data-dismiss="alert">&times;</button>
+			{{session('error')}}
+		</div>
+	@endif
 	<div class="col-md-12">
 		<h5 class="modal-header">Search Student <span class="badge badge-success">Total Student : {{$studentsCount}}</span></h5>
 		<br><input type="text" id="myInput" class="form-control col-md-6 float-right" onkeyup="myFunction()" placeholder="Search using Admission No..."><br>
