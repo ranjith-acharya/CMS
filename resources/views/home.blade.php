@@ -24,7 +24,7 @@
 					<h5 class="modal-header">Student <span class="badge badge-success">{{$studentsCount}}</span></h5>
 					<div class="col-md-12 container modal-body">
 						<a href="{{action('StudentController@create')}}"><button class="btn btn-primary btn-sm mr-2">Add</button></a>
-						<button class="btn btn-primary btn-sm">View</button>
+						<a href="{{action('StudentController@index')}}"><button class="btn btn-primary btn-sm">View</button></a>
 					</div>
 				</div>
 			</div>
