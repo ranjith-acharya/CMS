@@ -8,9 +8,12 @@
     <title>{{ config('app.name', 'CMS') }} @yield('custom-title')</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap&subset=latin-ext,vietnamese" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -33,6 +36,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="{{url('/home')}}">Home</a>
+						</li>
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -71,5 +77,6 @@
             @yield('content')
         </main>
     </div>
+	@yield('custom-js')
 </body>
 </html>
