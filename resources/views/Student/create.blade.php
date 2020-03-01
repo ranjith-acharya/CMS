@@ -27,18 +27,18 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4 form-group">
+				<div class="col-md-6 form-group">
 					<label for="admissionNo" class="font-weight-bold">Admission No.</label>
 					<input type="text" name="admissionNo" placeholder="Admission No." class="form-control" required>
 				</div>
-				<div class="col-md-4 form-group">
+				<div class="col-md-6 form-group">
 					<label for="email" class="font-weight-bold">Email address</label>
 					<input type="email" name="email" placeholder="Email address" class="form-control" required>
 				</div>
-				<div class="col-md-4 form-group">
+				<!--<div class="col-md-4 form-group">
 					<label for="password" class="font-weight-bold">New password</label>
 					<input type="password" name="password" placeholder="New password" class="form-control" required>
-				</div>
+				</div>-->
 			</div>
 			<div class="row">
 				<div class="col-md-12 form-group">
@@ -69,7 +69,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 form-group">
+				<div class="col-md-3 form-group">
 					<label for="branch" class="font-weight-bold">Branch</label>
 					<select class="form-control" name="branch" required>
 						<option value="">-- Select branch --</option>
@@ -81,7 +81,7 @@
 						<option value="mechanical engineering">Mechanical Engineering</option>
 					</select>
 				</div>
-				<div class="col-md-6 form-group">
+				<div class="col-md-3 form-group">
 					<label for="year" class="font-weight-bold">Year</label>
 					<select class="form-control" name="year" required>
 						<option value="">-- Select year --</option>
@@ -91,18 +91,15 @@
 						<option value="B.E">Final Year(B.E)</option>
 					</select>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 form-group">
+				<div class="col-md-3 form-group">
 					<label for="avatar" class="font-weight-bold">Avatar</label>
 					<input type="file" name="avatar" placeholder="Avatar" class="form-control" accept="image/*" required>
 				</div>
-				<div class="col-md-6 form-group"><br>
+				<div class="col-md-3 form-group"><br>
 					<input type="submit" class="btn btn-success" value="Save">
 					<input type="reset" class="btn btn-danger" value="Reset">
 				</div>
 			</div>
-			
 		</form>
 	</div>
 </div>
