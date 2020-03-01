@@ -6,7 +6,8 @@
 @section('content')
 <div class="container">
 	<div class="col-md-12">
-		<h5 class="modal-header font-weight-bold mb-4">{{$student->firstName}} {{$student->lastName}}
+		<h5 class="modal-header font-weight-bold mb-4">
+			<a href="{{action('StudentController@show', $student->id)}}" class="link">{{$student->firstName}} {{$student->lastName}}</a>
 			<span class="float-right">{{$student->admissionNo}}</span>
 		</h5>
 		<div class="row">
@@ -31,15 +32,15 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label for="email" class="font-weight-bold">Email :</label>
-						<div class="form-group lead">{{$student->email}}</div>
+						<div class="form-group lead"><a href="mailto:{{$student->email}}">{{$student->email}}</a></div>
 					</div>
 					<div class="col-md-3">
 						<label for="contact1" class="font-weight-bold">Primary Contact :</label>
-						<div class="form-group lead">{{$student->contact1}}</div>
+						<div class="form-group lead"><a href="tel:+91{{$student->contact1}}">{{$student->contact1}}</a></div>
 					</div>
 					<div class="col-md-3">
 						<label for="contact2" class="font-weight-bold">Another Contact :</label>
-						<div class="form-group lead">{{$student->contact2}}</div>
+						<div class="form-group lead"><a href="tel:+91{{$student->contact2}}">{{$student->contact2}}</a></div>
 					</div>
 				</div>
 				<div class="row">
@@ -63,6 +64,9 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="float-right form-group lead">
+			<a href="{{action('StudentController@edit', $student->id)}}"><button type="button" class="btn btn-primary btn-sm">EDIT</button></a>
 		</div>
 	</div>
 </div>
