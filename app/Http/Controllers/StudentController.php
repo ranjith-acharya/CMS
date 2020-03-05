@@ -20,9 +20,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-		$studentsCount = Student::count();
-		$students = Student::all();
-        return view('student.index',compact('studentsCount', 'students'));
+		//
     }
 
     /**
@@ -83,7 +81,7 @@ class StudentController extends Controller
             $student -> avatar = $name;
         }
 		$student -> save();
-		return redirect('home')->with('success', 'Student Added');
+		return redirect('home')->with('success', 'Successfully added Student!');
     }
 
     /**
