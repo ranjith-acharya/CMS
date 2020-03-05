@@ -8,7 +8,7 @@
 	<div class="col-md-12">
 		<h5 class="modal-header font-weight-bold mb-4">
 			<a href="{{action('StudentController@show', $student->id)}}" class="link">{{$student->firstName}} {{$student->lastName}}</a>
-			<span class="float-right">{{$student->admissionNo}}</span>
+			<span class="float-right text-uppercase">{{$student->admissionNo}}</span>
 		</h5>
 		<div class="row">
 			<div class="col-md-3 mb-2">
@@ -55,7 +55,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<label for="address" class="font-weight-bold">Address :</label>
+						<label for="address" class="font-weight-bold">Full Address :</label>
 						<div class="form-group lead text-capitalize">{{($student->address)}}</div>
 					</div>
 					<div class="col-md-6">
@@ -66,7 +66,13 @@
 			</div>
 		</div>
 		<div class="float-right form-group lead">
-			<a href="{{action('StudentController@edit', $student->id)}}"><button type="button" class="btn btn-primary btn-sm">EDIT</button></a>
+			<div class="dropdown">
+				<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Options </button>
+				<div class="dropdown-menu">
+					<a href="{{action('StudentController@edit', $student->id)}}" class="dropdown-item">Edit</a>
+					<a href="{{action('ResultsController@show', $student->id)}}" class="dropdown-item">Results</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
