@@ -44,7 +44,7 @@
 			</div>
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label for="address" class="font-weight-bold">Address :</label>
+					<label for="address" class="font-weight-bold">Full Address :</label>
 					<textarea name="address" class="form-control" value="{{$student->address}}">{{$student->address}}</textarea>
 				</div>
 			</div>
@@ -76,7 +76,7 @@
 					</select>
 				</div>
 				<div class="form-group col-md-4">
-					<label for="contact2" class="font-weight-bold">Year :</label>
+					<label for="year" class="font-weight-bold">Year :</label>
 					<select class="form-control" name="year">
 						<option value="">-- Select year --</option>
 						<option value="F.E" @if($student->year == "F.E")selected @endif >First Year(F.E)</option>
@@ -88,6 +88,7 @@
 				<div class="form-group col-md-4"><br>
 					<input type="submit" value="Save Changes" class="btn btn-success btn-sm">
 					<input type="reset" value="Reset" class="btn btn-danger btn-sm">
+					<a href="{{action('StudentController@show', $student->id)}}"><input type="button" value="Back" class="btn btn-primary btn-sm"></a>
 				</div>
 			</div>
 		</form>
