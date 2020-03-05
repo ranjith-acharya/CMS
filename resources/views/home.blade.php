@@ -24,16 +24,16 @@
 					<h5 class="modal-header">Student <span class="badge badge-success">{{$studentsCount}}</span></h5>
 					<div class="col-md-12 container modal-body">
 						<a href="{{action('StudentController@create')}}"><button class="btn btn-primary btn-sm mr-2">Add</button></a>
-						<a href="{{action('StudentController@index')}}"><button class="btn btn-primary btn-sm">View</button></a>
+						<a href="{{action('HomeController@studentIndex')}}"><button class="btn btn-primary btn-sm">View</button></a>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="card card-body mb-2" style="box-shadow:0px 8px 8px rgba(0,0,0,0.1);">
-					<h5 class="modal-header">Staff</h5>
+					<h5 class="modal-header">Staff <span class="badge badge-success">{{$staffsCount}}</span></h5>
 					<div class="col-md-12 container modal-body">
-						<button class="btn btn-primary btn-sm mr-2">Add</button>
-						<button class="btn btn-primary btn-sm">View</button>
+						<a href="{{action('StaffController@create')}}"><button class="btn btn-primary btn-sm mr-2">Add</button></a>
+						<a href="{{action('HomeController@staffIndex')}}"><button class="btn btn-primary btn-sm">View</button></a>
 					</div>
 				</div>
 			</div>
