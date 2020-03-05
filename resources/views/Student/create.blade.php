@@ -5,6 +5,18 @@
 
 @section('content')
 <div class="container">
+	@if(session('success'))
+		<div class="alert alert-success alert-dismissible fade show">
+		<button class="close" data-dismiss="alert">&times;</button>
+			{{session('success')}}
+		</div>
+	@endif
+	@if(session('error'))
+		<div class="alert alert-danger alert-dismissible fade show">
+		<button class="close" data-dismiss="alert">&times;</button>
+			{{session('error')}}
+		</div>
+	@endif
 	<div class="col-md-12">
 		<h5 class="modal-header">Add New Student</h5><br>
 		<form class="form" method="post" enctype="multipart/form-data" action="{{action('StudentController@store')}}">
@@ -42,8 +54,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12 form-group">
-					<label for="address" class="font-weight-bold">Address</label>
-					<textarea name="address" placeholder="Address" class="form-control" required></textarea>
+					<label for="address" class="font-weight-bold">Full Address</label>
+					<textarea name="address" placeholder="Full Address" class="form-control" required></textarea>
 				</div>
 			</div>
 			<div class="row">
