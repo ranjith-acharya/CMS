@@ -13,4 +13,7 @@ class Student extends Model
 	protected $hidden = [
         'password', 'remember_token',
     ];
+	protected function sem3(){
+		return $this->hasOne('App\Sem3');
+	}
 }
