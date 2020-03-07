@@ -14,7 +14,7 @@ class AddAdmissionNoToSem3s extends Migration
     public function up()
     {
         Schema::table('sem3s', function (Blueprint $table) {
-            $table->string('admissionNo');
+            $table->string('admissionNo')->unique();
         });
     }
 

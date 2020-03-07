@@ -179,7 +179,7 @@
 		</div>
 		<div class="form-group float-right">
 			<input type="submit" class="btn btn-sm btn-success" value="Save">
-			<button type="button" class="btn btn-sm btn-danger" data-dismiss="modal" >Cancel</button>
+			<input type="reset" class="btn btn-sm btn-danger" value="Cancel">
 		</div>
 		</form>
 	</div>
