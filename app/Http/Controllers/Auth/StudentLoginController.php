@@ -22,7 +22,7 @@ class StudentLoginController extends Controller
 			'password' => 'required|min:8',
 		]);
 		if(Auth::guard('student')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
-			return redirect()->intended(route('student.index'));
+			return redirect()->intended(route('students.index'));
 		}
 			return redirect()->back()->withInput($request->only('email', 'remember'));
 	}
