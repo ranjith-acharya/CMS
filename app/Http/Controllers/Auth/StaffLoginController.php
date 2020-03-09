@@ -22,7 +22,7 @@ class StaffLoginController extends Controller
 			'password' => 'required|min:8',
 		]);
 		if(Auth::guard('staff')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
-			return redirect()->intended(route('staff.index'));
+			return redirect()->intended(route('staffs.index'));
 		}
 			return redirect()->back()->withInput($request->only('email', 'remember'));
 	}
