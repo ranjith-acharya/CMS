@@ -1,0 +1,12 @@
+*{font-family: 'Raleway', sans-serif;}
+.form-control-email, .form-control-pass{
+	outline:none;
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	border-bottom-color:#eee;
+}
+.form-control-email:focus, .form-control-pass:focus{
+	border-color:#007bff;
+	transition:.5s;
+}
