@@ -1,100 +1,35 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+@section('content')
+<h4 class="mt-4 modal-header">Welcome to CMS</h4>
+<div class="mt-5 container card-body bg-white col-md-6" style="box-shadow:0px 0px 8px rgba(0,0,0,0.1);border-radius:5px;">
+	<form class="form container pt-3 pb-4" method="POST" action="{{ route('login') }}">
+		<h6 class="lead container mb-4">Login to CMS</h6>
+		@csrf<div class="form-group">
+			<input type="email" class="form-control-email col-md-12 mb-3" name="email" value="{{ old('email') }}" placeholder="Enter Email address">
+			@error('email')
+				<small class="text-danger font-weight-bold">
+					{{ $message }}
+				</small>
+			@enderror
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control-pass col-md-12 mb-3" name="password" value="{{ old('password') }}" placeholder="Enter Password">
+			@error('password')
+				<small class="text-danger font-weight-bold">
+					{{ $message }}
+				</small>
+			@enderror
         </div>
-    </body>
-</html>
+		<div class="row">
+			<div class="col-md-6">
+				<button class="btn btn-sm btn-primary" type="submit" name="action">Log in</button>
+			</div>
+			<div class="col-md-6">
+			@if (Route::has('password.request'))<a class="btn btn-link" href="{{ route('password.request') }}">
+			{{ __('Forgot Your Password?') }}</a>
+			@endif</div>
+		</div>
+	</form>
+</div>
+@endsection
