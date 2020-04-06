@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name') }}</title>
+    <title>{{ config('app.name') }} - @yield('custom-title')</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -33,6 +33,7 @@
 			@else
 				<li class="nav-item dropdown">
 					<a id="navbarDropdown" class="nav-link text-white dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+						<img src="/img/{{Auth::user()->avatar}}" class="img-profile img-responsive rounded-circle" width="30px" height="30px">&nbsp;
 						{{ Auth::user()->name }} <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
