@@ -17,6 +17,9 @@
         <div class="col-md-12">
 			<div class="modal-header">
 				<h5 class="mt-2">Profile Information</h5>
+				<a class="btn-link link mt-1" href="{{route('home.index')}}">
+					<button type="button" class="btn btn-sm btn-primary float-right">Home</button>
+				</a>
 			</div>
 			<div class="modal-body">
 				<div class="row mt-2">
@@ -26,9 +29,13 @@
 					</div>
 					<div class="col-md-8 mt-3">
 						<div class="row">
-							<div class="col-md-12 form-group">
+							<div class="col-md-6 form-group">
 								<label for="created" class="font-weight-bold">Created :</label>
 								<div class="">{{\Carbon\Carbon::parse(Auth::user()->created_at)->format('d-M-Y, (H:i T)')}}</div>
+							</div>
+							<div class="col-md-6 form-group">
+								<label for="updated" class="font-weight-bold">Updated :</label>
+								<div class="">{{\Carbon\Carbon::parse(Auth::user()->updated_at)->format('d-M-Y, (H:i T)')}}</div>
 							</div>
 						</div>
 						<div class="row">
