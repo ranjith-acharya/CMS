@@ -32,7 +32,7 @@
 					@csrf<div class="row">
 						<div class="col-md-4 form-group">
 							<label for="admissionNo" class="font-weight-bold">Admission no :</label>
-							<input type="text" name="admissionNo" id="admissionNo" placeholder="Admission number" class="form-control">
+							<input type="text" name="admissionNo" id="admissionNo" placeholder="Admission number" class="form-control" value="{{old('admissionNo')}}">
 							@error('admissionNo')
 								<span class="text-danger">
 									{{$message}}
@@ -41,7 +41,7 @@
 						</div>
 						<div class="col-md-4 form-group">
 							<label for="firstName" class="font-weight-bold">First name :</label>
-							<input type="text" name="firstName" id="firstName" placeholder="First name" class="form-control">
+							<input type="text" name="firstName" id="firstName" placeholder="First name" class="form-control" value="{{old('firstName')}}">
 							@error('firstName')
 								<span class="text-danger">
 									{{$message}}
@@ -50,7 +50,7 @@
 						</div>
 						<div class="col-md-4 form-group">
 							<label for="lastName" class="font-weight-bold">Last name :</label>
-							<input type="text" name="lastName" id="lastName" placeholder="Last name" class="form-control">
+							<input type="text" name="lastName" id="lastName" placeholder="Last name" class="form-control" value="{{old('lastName')}}">
 							@error('lastName')
 								<span class="text-danger">
 									{{$message}}
@@ -61,7 +61,7 @@
 					<div class="row">
 						<div class="col-md-3 form-group">
 							<label for="email" class="font-weight-bold">Email address :</label>
-							<input type="email" name="email" id="email" placeholder="Email address" class="form-control">
+							<input type="email" name="email" id="email" placeholder="Email address" class="form-control" value="{{old('email')}}">
 							@error('email')
 								<span class="text-danger">
 									{{$message}}
@@ -70,7 +70,7 @@
 						</div>
 						<div class="col-md-3 form-group">
 							<label for="contact1" class="font-weight-bold">Primary contact :</label>
-							<input type="text" name="contact1" id="contact1" placeholder="Primary contact" class="form-control" maxlength="10">
+							<input type="text" name="contact1" id="contact1" placeholder="Primary contact" class="form-control" maxlength="10"  value="{{old('contact1')}}">
 							@error('contact1')
 								<span class="text-danger">
 									{{$message}}
@@ -79,7 +79,7 @@
 						</div>
 						<div class="col-md-3 form-group">
 							<label for="contact2" class="font-weight-bold">Another contact :</label>
-							<input type="text" name="contact2" id="contact2" placeholder="Another contact" class="form-control" maxlength="10">
+							<input type="text" name="contact2" id="contact2" placeholder="Another contact" class="form-control" maxlength="10" value="{{old('contact2')}}">
 							@error('contact2')
 								<span class="text-danger">
 									{{$message}}
@@ -146,7 +146,7 @@
 					<div class="row">
 						<div class="col-md-4 form-group">
 							<label for="address" class="font-weight-bold">Address :</label>
-							<textarea type="text" name="address" id="address" placeholder="Address" class="form-control"></textarea>
+							<textarea type="text" name="address" id="address" placeholder="Address" class="form-control" value="{{old('address')}}">{{old('address')}}</textarea>
 							@error('address')
 								<span class="text-danger">
 									{{$message}}
