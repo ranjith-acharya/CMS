@@ -31,4 +31,25 @@ class HomeController extends Controller
 		$user = User::find($id);
 		return view('show', compact('user', 'id'));
 	}
+	public function edit($id){
+		$user = User::find($id);
+		return view('edit', compact('user', 'id'));
+	}
+	public function update(Request $request, $id){
+		$this->validate($request, [
+			'name' => 'required',
+		],[
+			'name.required' => 'Please provide a Name',
+		]);
+		$user = User::find($id);
+		$user -> name = $request->get('name');
+		if($request->hasfile('avatar')){
+			$file = $request->file('avatar');
+			$name = time().'.'.$file->getClientOriginalExtension();
+			$file -> move(public_path().'/img/', $name);
+			$user -> avatar = $name;
+		}
+		$user -> save();
+		return redirect()->route('home.show', $id);
+	}
 }
