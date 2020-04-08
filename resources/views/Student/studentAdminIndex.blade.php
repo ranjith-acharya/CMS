@@ -1,6 +1,6 @@
 @extends('layouts.custom-app')
 
-@section('custom-title') New Record for Student @endsection
+@section('custom-title') All Record Student @endsection
 
 @section('options')
 <a class="dropdown-item" href="{{url('/home')}}">
@@ -17,9 +17,14 @@
         <div class="col-md-12">
 			<div class="modal-header">
 				<h5 class="mt-2">All - Student</h5>
-				<a class="btn-link link mt-1" href="{{route('home.index')}}">
-					<button type="button" class="btn btn-sm btn-primary float-right">Home</button>
-				</a>
+				<div class="dropdown mt-1">
+					<button type="button" class="btn btn-sm btn-primary dropdown-toggle float-right" data-toggle="dropdown">Actions</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="{{route('home.index')}}">Home</a>
+						<a class="dropdown-item" href="{{route('staffs.index')}}">Staff Index</a>
+						<a class="dropdown-item" href="{{route('students.create')}}">Create</a>
+					</div>
+				</div>
 			</div>
 			<div class="table-responsive container mt-4">
 				<table id="example" class="table table-striped table-bordered" style="width:100%">
