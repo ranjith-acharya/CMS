@@ -17,9 +17,13 @@
         <div class="col-md-12">
 			<div class="modal-header">
 				<h5 class="mt-2">Profile Info</h5>
-				<a class="btn-link link mt-1" href="{{route('home.index')}}">
-					<button type="button" class="btn btn-sm btn-primary float-right">Home</button>
-				</a>
+				<div class="dropdown mt-1">
+					<button type="button" class="btn btn-sm btn-primary dropdown-toggle float-right" data-toggle="dropdown">Actions</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="{{route('students.index')}}">Home</a>
+						<a class="dropdown-item" href="{{route('students.edit', $student->id)}}">Edit</a>
+					</div>
+				</div>
 			</div>
 			<div class="modal-body">
 				<div class="row mt-2">
