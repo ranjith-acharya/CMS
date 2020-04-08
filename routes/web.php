@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::resource('/home', 'HomeController');
 Route::resource('/admin/students', 'StudentAdminController');
+Route::resource('/admin/staffs', 'StaffAdminController');
