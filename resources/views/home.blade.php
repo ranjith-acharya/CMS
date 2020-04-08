@@ -33,14 +33,51 @@
 				</div>
 				<div class="col-md-5 card card-body mt-4 mr-1">
 					<div class="dropdown">
-					<strong>Staffs :</strong>
+					<strong>Staffs :</strong> <i class="fa fa-users"></i> {{$staffCount}}
 						<button type="button" class="btn btn-sm btn-primary dropdown-toggle float-right" data-toggle="dropdown">
 							Actions
 						</button>
 						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Link 1</a>
-							<a class="dropdown-item" href="#">Link 2</a>
-							<a class="dropdown-item" href="#">Link 3</a>
+							<a class="dropdown-item" href="{{route('staffs.index')}}">All Record</a>
+							<a class="dropdown-item" href="{{route('staffs.create')}}">New Record</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container col-md-10 modal-body">
+				<div class="row mt-2">
+					<div class="col-md-3">
+						<img src="/img/{{Auth::user()->avatar}}" class="img-responsive img-thumbnail"><br>
+						<div class="dropdown mt-2">
+						<button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+							Actions
+						</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="{{route('home.edit', Auth::user()->id)}}">Edit</a>
+							<a class="dropdown-item" href="{{route('home.show', Auth::user()->id)}}">View</a>
+						</div>
+					</div>
+					</div>
+					<div class="col-md-8 mt-3">
+						<div class="row">
+							<div class="col-md-6 form-group">
+								<label for="created" class="font-weight-bold">Created :</label>
+								<div class="">{{\Carbon\Carbon::parse(Auth::user()->created_at)->format('d-M-Y, (H:i T)')}}</div>
+							</div>
+							<div class="col-md-6 form-group">
+								<label for="updated" class="font-weight-bold">Updated :</label>
+								<div class="">{{\Carbon\Carbon::parse(Auth::user()->updated_at)->format('d-M-Y, (H:i T)')}}</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 form-group">
+								<label for="name" class="font-weight-bold">Full name :</label>
+								<div class="">{{Auth::user()->name}}</div>
+							</div>
+							<div class="col-md-6 form-group">
+								<label for="email" class="font-weight-bold">Email address :</label>
+								<div class="">{{Auth::user()->email}}</div>
+							</div>
 						</div>
 					</div>
 				</div>
