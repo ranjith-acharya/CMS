@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Staff;
 use App\Student;
 
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
      */
     public function index(){
 		$studentCount = Student::count();
-        return view('home', compact('studentCount'));
+		$staffCount = Staff::count();
+        return view('home', compact('studentCount', 'staffCount'));
     }
 	public function show($id){
 		$user = User::find($id);
