@@ -32,4 +32,15 @@
 		</div>
 	</form>
 </div>
+<div class="mt-4">
+	<div class="dropdown dropright">
+	<button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+		Change Login
+	</button>
+	<div class="dropdown-menu dropdown-menu">
+		<a class="dropdown-item" href="#">Staff Login</a>
+		<a class="dropdown-item" href="{{route('student.login')}}">Student Login</a>
+	</div>
+	</div>
+</div>
 @endsection
