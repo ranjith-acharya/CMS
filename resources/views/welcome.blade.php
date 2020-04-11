@@ -1,7 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<h4 class="mt-4 modal-header">Welcome to CMS</h4>
+<h4 class="mt-4 modal-header">Welcome to CMS
+<div class="float-right">
+	<div class="dropdown dropright">
+	<button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+		Login
+	</button>
+	<div class="dropdown-menu dropdown-menu">
+		<a class="dropdown-item" href="{{route('staff.login')}}">Staff Login</a>
+		<a class="dropdown-item" href="{{route('student.login')}}">Student Login</a>
+	</div>
+	</div>
+</div></h4>
 <div class="mt-5 container card-body bg-white col-md-6" style="box-shadow:0px 0px 8px rgba(0,0,0,0.1);border-radius:5px;">
 	<form class="form container pt-3 pb-4" method="POST" action="{{ route('login') }}">
 		<h6 class="lead container mb-4">Login to CMS</h6>
@@ -31,16 +42,5 @@
 			@endif</div>
 		</div>
 	</form>
-</div>
-<div class="mt-4">
-	<div class="dropdown dropright">
-	<button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
-		Change Login
-	</button>
-	<div class="dropdown-menu dropdown-menu">
-		<a class="dropdown-item" href="#">Staff Login</a>
-		<a class="dropdown-item" href="{{route('student.login')}}">Student Login</a>
-	</div>
-	</div>
 </div>
 @endsection
