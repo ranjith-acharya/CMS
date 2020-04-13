@@ -52,6 +52,7 @@
 									<div class="dropdown-menu">
 										<a class="dropdown-item" href="{{route('students.edit', $student->id)}}">Edit</a>
 										<a class="dropdown-item" href="{{route('students.show', $student->id)}}">View</a>
+										<a class="dropdown-item" href="{{route('results.index', $student->id)}}">Results</a>
 									</div>
 								</div>
 							</td>
