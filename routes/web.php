@@ -24,6 +24,8 @@ Route::resource('/home', 'HomeController');
 Route::resource('/admin/students', 'StudentAdminController');
 Route::get('/admin/students/results/{results}', 'StudentAdminResultController@index')->name('results.index');
 Route::get('/admin/students/results/sem6/{results}', 'Sem6\StudentAdminSem6@sem6Index');
+Route::resource('/admin/students/results/sem6/{results}/internalMarks', 'Sem6\StudentAdminSem6Int');
+Route::resource('/admin/students/results/sem6/{results}/externalMarks', 'Sem6\StudentAdminSem6Ext');
 
 Route::resource('/admin/staffs', 'StaffAdminController');
 
