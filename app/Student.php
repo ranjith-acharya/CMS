@@ -41,4 +41,10 @@ class Student extends Authenticatable
 	public function user(){
 		return $this->belongsTo('App\User');
 	}
+	public function sem6Internal(){
+        return $this->hasOne('App\Sem6Internal');
+    }
+	public function sem6External(){
+        return $this->hasOne('App\Sem6External');
+    }
 }
