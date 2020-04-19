@@ -8,10 +8,10 @@ use App\Student;
 class StudentAdminResultController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth');
-    }
+		$this->middleware('auth');
+	}
 	public function index($id){
 		$student = Student::find($id);
-		return view('result.studentAdminResultIndex', compact('student', 'id'));
+		return view('result.studentAdminResultIndex',  compact('student', 'id'));
 	}
 }
