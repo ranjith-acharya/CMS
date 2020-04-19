@@ -32,6 +32,7 @@ class CreateSem6ExternalsTable extends Migration
 			$table->string('ext8')->nullable();
 			$table->string('ext8mark')->nullable();
 			$table->string('total');
+			$table->string('outOf');
             $table->timestamps();
         });
     }
