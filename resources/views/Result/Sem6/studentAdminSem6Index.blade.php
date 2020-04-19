@@ -1,6 +1,6 @@
 @extends('layouts.custom-app')
 
-@section('custom-title') Results Sem6 - {{$student->firstName}}&nbsp;{{$student->lastName}} @endsection
+@section('custom-title') Sem6 Result - {{$student->admissionNo}} @endsection
 
 @section('options')
 <a class="dropdown-item" href="{{url('/home')}}">
@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container pb-4">
     <div class="row justify-content-center">
         <div class="col-md-12">
 			<div class="modal-header">
@@ -39,7 +39,7 @@
 				<div class="tab tab-content justify-content-center">
 					<div class="tab-pane active mt-4" id="sem6Int">
 						<h5 class="mb-4">Sem 6 Internal {{$student->branch}}</h5>
-						<form method="post" class="form" action="{{route('internalMarks.store', $student->id)}}">
+						<form method="post" class="form" action="{{route('internalMarks.store')}}">
 							@csrf<input type="text" name="admissionNo" class="form-control" value="{{$student->admissionNo}}" hidden>
 							<div class="row">
 								<div class="col-md-6">
@@ -669,6 +669,16 @@
 								<div class="col-md-3">
 									<input type="text" name="totalIntMark" id="totalIntMark" class="form-control" readonly>
 								</div>
+								<div class="col-md-3">
+									<select class="custom-select" name="outOfInt">
+										<option value="">-- Select Total no. of Subj. --</option>
+										<option value="100">05</option>
+										<option value="120">06</option>
+									</select>
+									@error('outOfInt')
+										<span class="text-danger">{{$message}}</span>
+									@enderror
+								</div>
 								<div class="col-md-3 mt-2">
 									<input type="submit" class="btn btn-sm btn-success" value="Save">
 									<input type="reset" class="btn btn-sm btn-danger" value="Cancel">
@@ -678,7 +688,7 @@
 					</div>
 					<div class="tab-pane fade mt-4" id="sem6Ext">
 						<h5 class="mb-4">Sem 6 External {{$student->branch}}</h5>
-						<form method="post" class="form" action="{{route('externalMarks.store', $student->id)}}">
+						<form method="post" class="form" action="{{route('externalMarks.store')}}">
 							@csrf<input type="text" name="admissionNo" class="form-control" value="{{$student->admissionNo}}" hidden>
 							<div class="row">
 								<div class="col-md-6">
@@ -1307,6 +1317,16 @@
 							<div class="row">
 								<div class="col-md-3">
 									<input type="text" name="totalExtMark" id="totalExtMark" class="form-control" readonly>
+								</div>
+								<div class="col-md-3">
+									<select class="custom-select" name="outOfExt">
+										<option value="">-- Select Total no. of Subj. --</option>
+										<option value="100">05</option>
+										<option value="120">06</option>
+									</select>
+									@error('outOfExt')
+										<span class="text-danger">{{$message}}</span>
+									@enderror
 								</div>
 								<div class="col-md-3 mt-2">
 									<input type="submit" class="btn btn-sm btn-success" value="Save">
