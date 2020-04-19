@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddAdmissionnoToSem6InternalsTable extends Migration
+class AddAdmissionnoToSem6Internals extends Migration
 {
     /**
      * Run the migrations.
