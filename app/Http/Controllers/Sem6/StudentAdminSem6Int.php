@@ -9,10 +9,6 @@ use App\Sem6Internal;
 
 class StudentAdminSem6Int extends Controller
 {
-	public function __construct(){
-		$this->middleware('auth');
-	}
-	
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +35,7 @@ class StudentAdminSem6Int extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
         $this->validate($request, [
 			'int1' => 'required',
@@ -47,52 +43,49 @@ class StudentAdminSem6Int extends Controller
 			'int3' => 'required',
 			'int4' => 'required',
 			'int5' => 'required',
-			'int1mark' => 'required|digits_between: 0,20',
-			'int2mark' => 'required|digits_between: 0,20',
-			'int3mark' => 'required|digits_between: 0,20',
-			'int4mark' => 'required|digits_between: 0,20',
-			'int5mark' => 'required|digits_between: 0,20',
+			'int1mark' => 'required',
+			'int2mark' => 'required',
+			'int3mark' => 'required',
+			'int4mark' => 'required',
+			'int5mark' => 'required',
+			'outOfInt' => 'required',
 		],[
-			'int1.required'=> 'Please Select the Subject',
-			'int2.required'=> 'Please Select the Subject',
-			'int3.required'=> 'Please Select the Subject',
-			'int4.required'=> 'Please Select the Subject',
-			'int5.required'=> 'Please Select the Subject',
-			'int1mark.required'=> 'Please provide the Marks',
-			'int2mark.required'=> 'Please provide the Marks',
-			'int3mark.required'=> 'Please provide the Marks',
-			'int4mark.required'=> 'Please provide the Marks',
-			'int5mark.required'=> 'Please provide the Marks',
-			'int1mark.digits_between'=> 'Please provide the Marks within 0 to 20',
-			'int2mark.digits_between'=> 'Please provide the Marks within 0 to 20',
-			'int3mark.digits_between'=> 'Please provide the Marks within 0 to 20',
-			'int4mark.digits_between'=> 'Please provide the Marks within 0 to 20',
-			'int5mark.digits_between'=> 'Please provide the Marks within 0 to 20',
+			'int1.required' => 'Please select Subject',
+			'int2.required' => 'Please select Subject',
+			'int3.required' => 'Please select Subject',
+			'int4.required' => 'Please select Subject',
+			'int5.required' => 'Please select Subject',
+			'int1mark.required' => 'Please provide Marks',
+			'int2mark.required' => 'Please provide Marks',
+			'int3mark.required' => 'Please provide Marks',
+			'int4mark.required' => 'Please provide Marks',
+			'int5mark.required' => 'Please provide Marks',
+			'outOfInt.required' => 'Please select No. of Subjects',
 		]);
-		
-		$sem6Internal = new Sem6Internal;
-		$student = Student::find($id);
-		$sem6Internal -> int1 = $request->get('int1');
-		$sem6Internal -> int1mark = $request->get('int1mark');
-		$sem6Internal -> int2 = $request->get('int2');
-		$sem6Internal -> int2mark = $request->get('int2mark');
-		$sem6Internal -> int3 = $request->get('int3');
-		$sem6Internal -> int3mark = $request->get('int3mark');
-		$sem6Internal -> int4 = $request->get('int4');
-		$sem6Internal -> int4mark = $request->get('int4mark');
-		$sem6Internal -> int5 = $request->get('int5');
-		$sem6Internal -> int5mark = $request->get('int5mark');
-		$sem6Internal -> int6 = $request->get('int6');
-		$sem6Internal -> int6mark = $request->get('int6mark');
-		$sem6Internal -> int7 = $request->get('int7');
-		$sem6Internal -> int7mark = $request->get('int7mark');
-		$sem6Internal -> int8 = $request->get('int8');
-		$sem6Internal -> int8mark = $request->get('int8mark');
-		$sem6Internal -> total = $request->get('totalIntMark');
-		$sem6Internal -> admissionNo = $student->admissionNo;
-		
-		$sem6Internal -> save();
-		return redirect()->back()->with('success', 'Internal Marks for Sem6 Stored.!!');
+			$sem6Internal = new Sem6Internal;
+			$sem6Internal -> int1 = $request->get('int1');
+			$sem6Internal -> int1mark = $request->get('int1mark');
+			$sem6Internal -> int2 = $request->get('int2');
+			$sem6Internal -> int2mark = $request->get('int2mark');
+			$sem6Internal -> int3 = $request->get('int3');
+			$sem6Internal -> int3mark = $request->get('int3mark');
+			$sem6Internal -> int4 = $request->get('int4');
+			$sem6Internal -> int4mark = $request->get('int4mark');
+			$sem6Internal -> int5 = $request->get('int5');
+			$sem6Internal -> int5mark = $request->get('int5mark');
+			$sem6Internal -> int6 = $request->get('int6');
+			$sem6Internal -> int6mark = $request->get('int6mark');
+			$sem6Internal -> int7 = $request->get('int7');
+			$sem6Internal -> int7mark = $request->get('int7mark');
+			$sem6Internal -> int8 = $request->get('int8');
+			$sem6Internal -> int8mark = $request->get('int8mark');
+			$sem6Internal -> total = $request->get('totalIntMark');
+			$sem6Internal -> outOf = $request->get('outOfInt');
+			$sem6Internal -> admissionNo = $request->get('admissionNo');
+			
+			$sem6Internal -> save();
+			
+			return redirect()->back()->with('success', 'Sem6 Internal marks Stored.');
     }
 
     /**
