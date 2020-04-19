@@ -1,6 +1,6 @@
 @extends('layouts.custom-app')
 
-@section('custom-title') Results - {{$student->firstName}}&nbsp;{{$student->lastName}} @endsection
+@section('custom-title') Results - {{$student->admissionNo}}@endsection
 
 @section('options')
 <a class="dropdown-item" href="{{url('/home')}}">
@@ -22,14 +22,17 @@
 				</a>
 			</div>
 			<div class="modal-body card-body">
-				<div class="">{{$student->firstName}}&nbsp;{{$student->lastName}}&emsp;<a href="mailto:{{$student->email}}">{{$student->email}}</a></div>
-				<div class="text-capitalize">{{$student->year}}&nbsp;{{$student->branch}}&nbsp;{{$student->stream}}</div><br>
+				<div class="mb-4">
+					{{$student->firstName}}&nbsp;{{$student->lastName}}<br>
+					<a href="mailto:{{$student->email}}" class="link">{{$student->email}}</a><br>
+					{{$student->year}}&nbsp;{{$student->branch}}&nbsp;{{$student->stream}}
+				</div>
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered">
 						<tbody class="text-center">
 							<tr>
-								<th colspan="2">First Year (F.E.)</th>
-								<th colspan="2">Second Year (S.E.)</th>
+								<th colspan="2">First Year (F.E)</th>
+								<th colspan="2">Second Year (S.E)</th>
 							</tr>
 							<tr>
 								<td>Sem 1</td>
@@ -38,12 +41,12 @@
 								<td>Sem 4</td>
 							</tr>
 							<tr>
-								<th colspan="2">Third Year (T.E.)</th>
-								<th colspan="2">Final Year (B.E.)</th>
+								<th colspan="2">Third Year (T.E)</th>
+								<th colspan="2">Final Year (B.E)</th>
 							</tr>
 							<tr>
 								<td>Sem 5</td>
-								<td><a class="link" href="{{action('Sem6\StudentAdminSem6@sem6Index', $student->id)}}">Sem 6</a></td>
+								<td><a class="link" href="{{action('Sem6\StudentAdminSem6Controller@index', $student->id)}}">Sem 6</a></td>
 								<td>Sem 7</td>
 								<td>Sem 8</td>
 							</tr>
