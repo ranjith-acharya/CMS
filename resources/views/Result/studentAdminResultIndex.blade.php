@@ -35,20 +35,20 @@
 								<th colspan="2">Second Year (S.E)</th>
 							</tr>
 							<tr>
-								<td>Sem 1</td>
-								<td>Sem 2</td>
-								<td>Sem 3</td>
-								<td>Sem 4</td>
+								<td><a class="link" href="{{action('Sem1\StudentAdminSem1Controller@index', $student->id)}}">Sem 1</a></td>
+								<td><a class="link" href="{{action('Sem2\StudentAdminSem2Controller@index', $student->id)}}">Sem 2</a></td>
+								<td><a class="link" href="{{action('Sem3\StudentAdminSem3Controller@index', $student->id)}}">Sem 3</a></td>
+								<td><a class="link" href="{{action('Sem4\StudentAdminSem4Controller@index', $student->id)}}">Sem 4</a></td>
 							</tr>
 							<tr>
 								<th colspan="2">Third Year (T.E)</th>
 								<th colspan="2">Final Year (B.E)</th>
 							</tr>
 							<tr>
-								<td>Sem 5</td>
+								<td><a class="link" href="{{action('Sem5\StudentAdminSem5Controller@index', $student->id)}}">Sem 5</a></td>
 								<td><a class="link" href="{{action('Sem6\StudentAdminSem6Controller@index', $student->id)}}">Sem 6</a></td>
-								<td>Sem 7</td>
-								<td>Sem 8</td>
+								<td><a class="link" href="{{action('Sem7\StudentAdminSem7Controller@index', $student->id)}}">Sem 7</a></td>
+								<td><a class="link" href="{{action('Sem8\StudentAdminSem8Controller@index', $student->id)}}">Sem 8</a></td>
 							</tr>
 						</tbody>
 					</table>
