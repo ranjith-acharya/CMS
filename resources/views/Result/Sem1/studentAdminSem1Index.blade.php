@@ -17,9 +17,13 @@
         <div class="col-md-12">
 			<div class="modal-header">
 				<h5 class="mt-2">Sem1 - {{$student->admissionNo}}</h5>
-				<a class="btn-link link mt-1" href="{{route('students.show', $student->id)}}">
-					<button type="button" class="btn btn-sm btn-primary float-right">View</button>
-				</a>
+				<div class="dropdown mt-1">
+					<button type="button" class="btn btn-sm btn-primary dropdown-toggle float-right" data-toggle="dropdown">Actions</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="{{route('students.show', $student->id)}}">View</a>
+						<a class="dropdown-item" href="{{route('results.index', $student->id)}}">Results Index</a>
+					</div>
+				</div>
 			</div>
 			@if(session('success'))
 			<div class="alert alert-success alert-dismissible fade show">
@@ -228,6 +232,16 @@
 										<span class="text-danger">{{$message}}</span>
 									@enderror
 								</div>
+								<div class="col-md-3">
+									<select class="custom-select" name="remarkInt">
+										<option value="">-- Remark --</option>
+										<option value="Fail">Fail</option>
+										<option value="Pass">Pass</option>
+									</select>
+									@error('remarkInt')
+										<span class="text-danger">{{$message}}</span>
+									@enderror
+								</div>
 								<div class="col-md-3 mt-2">
 									<input type="submit" class="btn btn-sm btn-success" value="Save">
 									<input type="reset" class="btn btn-sm btn-danger" value="Cancel">
@@ -423,6 +437,16 @@
 										<option value="480">06</option>
 									</select>
 									@error('outOfExt')
+										<span class="text-danger">{{$message}}</span>
+									@enderror
+								</div>
+								<div class="col-md-3">
+									<select class="custom-select" name="remarkExt">
+										<option value="">-- Remark --</option>
+										<option value="Fail">Fail</option>
+										<option value="Pass">Pass</option>
+									</select>
+									@error('remarkExt')
 										<span class="text-danger">{{$message}}</span>
 									@enderror
 								</div>
