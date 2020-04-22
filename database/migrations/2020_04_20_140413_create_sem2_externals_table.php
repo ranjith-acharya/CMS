@@ -29,6 +29,7 @@ class CreateSem2ExternalsTable extends Migration
 			$table->string('ext6mark');
 			$table->string('total');
 			$table->string('outOf');
+			$table->string('remark');
             $table->timestamps();
         });
     }
