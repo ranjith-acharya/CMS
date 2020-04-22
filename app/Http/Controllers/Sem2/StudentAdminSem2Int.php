@@ -51,6 +51,7 @@ class StudentAdminSem2Int extends Controller
 			'int5mark' => 'required',
 			'int6mark' => 'required',
 			'outOfInt' => 'required',
+			'remarkInt' => 'required',
 		],[
 			'int1.required' => 'Please select Subject',
 			'int2.required' => 'Please select Subject',
@@ -65,6 +66,7 @@ class StudentAdminSem2Int extends Controller
 			'int5mark.required' => 'Please provide Marks',
 			'int6mark.required' => 'Please provide Marks',
 			'outOfInt.required' => 'Please select No. of Subjects',
+			'remarkInt.required' => 'Please select Remark',
 		]);
 			$sem2Internal = new Sem2Internal;
 			$sem2Internal -> int1 = $request->get('int1');
@@ -81,6 +83,7 @@ class StudentAdminSem2Int extends Controller
 			$sem2Internal -> int6mark = $request->get('int6mark');
 			$sem2Internal -> total = $request->get('totalIntMark');
 			$sem2Internal -> outOf = $request->get('outOfInt');
+			$sem2Internal -> remark = $request->get('remarkInt');
 			$sem2Internal -> admissionNo = $request->get('admissionNo');
 				
 			$sem2Internal -> save();

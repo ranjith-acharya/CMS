@@ -51,6 +51,7 @@ class StudentAdminSem2Ext extends Controller
 			'ext5mark' => 'required',
 			'ext6mark' => 'required',
 			'outOfExt' => 'required',
+			'remarkExt' => 'required',
 		],[
 			'ext1.required' => 'Please select Subject',
 			'ext2.required' => 'Please select Subject',
@@ -65,6 +66,7 @@ class StudentAdminSem2Ext extends Controller
 			'ext5mark.required' => 'Please provide Marks',
 			'ext6mark.required' => 'Please provide Marks',
 			'outOfExt.required' => 'Please select No. of Subjects',
+			'remarkExt.required' => 'Please select Remark',
 		]);
 			$sem2External = new Sem2External;
 			$sem2External -> ext1 = $request->get('ext1');
@@ -81,6 +83,7 @@ class StudentAdminSem2Ext extends Controller
 			$sem2External -> ext6mark = $request->get('ext6mark');
 			$sem2External -> total = $request->get('totalExtMark');
 			$sem2External -> outOf = $request->get('outOfExt');
+			$sem2External -> remark = $request->get('remarkExt');
 			$sem2External -> admissionNo = $request->get('admissionNo');
 				
 			$sem2External -> save();
