@@ -15,6 +15,19 @@ class CreateSem3InternalsTable extends Migration
     {
         Schema::create('sem3_internals', function (Blueprint $table) {
             $table->id();
+			$table->string('int1');
+			$table->string('int1mark');
+			$table->string('int2');
+			$table->string('int2mark');
+			$table->string('int3');
+			$table->string('int3mark');
+			$table->string('int4');
+			$table->string('int4mark');
+			$table->string('int5');
+			$table->string('int5mark');
+			$table->string('total');
+			$table->string('outOf');
+			$table->string('remark');
             $table->timestamps();
         });
     }
