@@ -13,7 +13,7 @@ class Sem1Internal extends Authenticatable
 	protected $guard = 'student';
 
 	protected $fillable = [
-		'int1', 'int1mark', 'int2', 'int2mark', 'int3', 'int3mark', 'int4', 'int4mark', 'int5', 'int5mark', 'int6', 'int6mark', 'total', 'outOf' 
+		'int1', 'int1mark', 'int2', 'int2mark', 'int3', 'int3mark', 'int4', 'int4mark', 'int5', 'int5mark', 'int6', 'int6mark', 'total', 'outOf', 'remark', 
     ];
 	
 	public function student(){
