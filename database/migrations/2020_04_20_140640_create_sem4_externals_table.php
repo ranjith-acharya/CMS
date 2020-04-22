@@ -15,6 +15,21 @@ class CreateSem4ExternalsTable extends Migration
     {
         Schema::create('sem4_externals', function (Blueprint $table) {
             $table->id();
+			$table->string('ext1');
+			$table->string('ext1mark');
+			$table->string('ext2');
+			$table->string('ext2mark');
+			$table->string('ext3');
+			$table->string('ext3mark');
+			$table->string('ext4');
+			$table->string('ext4mark');
+			$table->string('ext5');
+			$table->string('ext5mark');
+			$table->string('ext6')->nullable();
+			$table->string('ext6mark')->nullable();
+			$table->string('total');
+			$table->string('outOf');
+			$table->string('remark');
             $table->timestamps();
         });
     }
