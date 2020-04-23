@@ -44,9 +44,8 @@
 				<div class="tab tab-content justify-content-center">
 					<div class="tab-pane active mt-4" id="sem3Int">
 						<h5 class="mb-4">Sem 3 Internal {{$student->branch}}</h5>
-						<form method="post" class="form" action="{{action('Sem3\StudentAdminSem3Int@store')}}">
-							@csrf<input type="text" name="admissionNo" class="form-control" value="{{$student->admissionNo}}" hidden>
-							<div class="row">
+						<form method="post" class="form" action="{{action('Sem3\StudentAdminSem3Int@store', $student->id)}}">
+							@csrf<div class="row">
 								<div class="col-md-6">
 									<div class="row">
 										<div class="col-md-6 form-group">
@@ -370,7 +369,6 @@
 									<select class="custom-select" name="outOfInt">
 										<option value="">-- Select Total no. of Subj. --</option>
 										<option value="100">05</option>
-										<option value="120">06</option>
 									</select>
 									@error('outOfInt')
 										<span class="text-danger">{{$message}}</span>
@@ -395,9 +393,8 @@
 					</div>
 					<div class="tab-pane fade mt-4" id="sem3Ext">
 						<h5 class="mb-4">Sem 3 External {{$student->branch}}</h5>
-						<form method="post" class="form" action="{{action('Sem3\StudentAdminSem3Ext@store')}}">
-							@csrf<input type="text" name="admissionNo" class="form-control" value="{{$student->admissionNo}}" hidden>
-							<div class="row">
+						<form method="post" class="form" action="{{action('Sem3\StudentAdminSem3Ext@store', $student->id)}}">
+							@csrf<div class="row">
 								<div class="col-md-6">
 									<div class="row">
 										<div class="col-md-6 form-group">
@@ -721,9 +718,6 @@
 									<select class="custom-select" name="outOfExt">
 										<option value="">-- Select Total no. of Subj. --</option>
 										<option value="400">05</option>
-										<option value="480">06</option>
-										<option value="560">07</option>
-										<option value="640">08</option>
 									</select>
 									@error('outOfExt')
 										<span class="text-danger">{{$message}}</span>
