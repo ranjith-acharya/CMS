@@ -35,7 +35,7 @@ class StudentAdminSem4Ext extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
 			'ext1' => 'required',
@@ -43,13 +43,11 @@ class StudentAdminSem4Ext extends Controller
 			'ext3' => 'required',
 			'ext4' => 'required',
 			'ext5' => 'required',
-			'ext6' => 'required',
 			'ext1mark' => 'required',
 			'ext2mark' => 'required',
 			'ext3mark' => 'required',
 			'ext4mark' => 'required',
 			'ext5mark' => 'required',
-			'ext6mark' => 'required',
 			'outOfExt' => 'required',
 			'remarkExt' => 'required',
 		],[
@@ -58,17 +56,16 @@ class StudentAdminSem4Ext extends Controller
 			'ext3.required' => 'Please select Subject',
 			'ext4.required' => 'Please select Subject',
 			'ext5.required' => 'Please select Subject',
-			'ext6.required' => 'Please select Subject',
 			'ext1mark.required' => 'Please provide Marks',
 			'ext2mark.required' => 'Please provide Marks',
 			'ext3mark.required' => 'Please provide Marks',
 			'ext4mark.required' => 'Please provide Marks',
 			'ext5mark.required' => 'Please provide Marks',
-			'ext6mark.required' => 'Please provide Marks',
 			'outOfExt.required' => 'Please select No. of Subjects',
 			'remarkExt.required' => 'Please select Remark',
 		]);
 			$sem4External = new Sem4External;
+			$students = Student::find($id);
 			$sem4External -> ext1 = $request->get('ext1');
 			$sem4External -> ext1mark = $request->get('ext1mark');
 			$sem4External -> ext2 = $request->get('ext2');
@@ -84,7 +81,7 @@ class StudentAdminSem4Ext extends Controller
 			$sem4External -> total = $request->get('totalExtMark');
 			$sem4External -> outOf = $request->get('outOfExt');
 			$sem4External -> remark = $request->get('remarkExt');
-			$sem4External -> admissionNo = $request->get('admissionNo');
+			$sem4External -> admissionNo = $students->admissionNo;
 				
 			$sem4External -> save();
 			
