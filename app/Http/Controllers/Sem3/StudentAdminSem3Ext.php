@@ -35,7 +35,7 @@ class StudentAdminSem3Ext extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
 			'ext1' => 'required',
@@ -65,6 +65,7 @@ class StudentAdminSem3Ext extends Controller
 			'remarkExt.required' => 'Please select Remark',
 		]);
 			$sem3External = new Sem3External;
+			$students = Student::find($id);
 			$sem3External -> ext1 = $request->get('ext1');
 			$sem3External -> ext1mark = $request->get('ext1mark');
 			$sem3External -> ext2 = $request->get('ext2');
@@ -78,7 +79,7 @@ class StudentAdminSem3Ext extends Controller
 			$sem3External -> total = $request->get('totalExtMark');
 			$sem3External -> outOf = $request->get('outOfExt');
 			$sem3External -> remark = $request->get('remarkExt');
-			$sem3External -> admissionNo = $request->get('admissionNo');
+			$sem3External -> admissionNo = $students->admissionNo;
 				
 			$sem3External -> save();
 			
