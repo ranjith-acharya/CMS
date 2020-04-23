@@ -33,6 +33,7 @@ class CreateSem6InternalsTable extends Migration
 			$table->string('int8mark')->nullable();
 			$table->string('total');
 			$table->string('outOf');
+			$table->string('remark');
             $table->timestamps();
         });
     }
