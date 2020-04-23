@@ -44,9 +44,8 @@
 				<div class="tab tab-content justify-content-center">
 					<div class="tab-pane active mt-4" id="sem4Int">
 						<h5 class="mb-4">Sem 4 Internal {{$student->branch}}</h5>
-						<form method="post" class="form" action="{{action('Sem4\StudentAdminSem4Int@store')}}">
-							@csrf<input type="text" name="admissionNo" class="form-control" value="{{$student->admissionNo}}" hidden>
-							<div class="row">
+						<form method="post" class="form" action="{{action('Sem4\StudentAdminSem4Int@store', $student->id)}}">
+							@csrf<div class="row">
 								<div class="col-md-6">
 									<div class="row">
 										<div class="col-md-6 form-group">
@@ -463,9 +462,8 @@
 					</div>
 					<div class="tab-pane fade mt-4" id="sem4Ext">
 						<h5 class="mb-4">Sem 4 External {{$student->branch}}</h5>
-						<form method="post" class="form" action="{{action('Sem4\StudentAdminSem4Ext@store')}}">
-							@csrf<input type="text" name="admissionNo" class="form-control" value="{{$student->admissionNo}}" hidden>
-							<div class="row">
+						<form method="post" class="form" action="{{action('Sem4\StudentAdminSem4Ext@store', $student->id)}}">
+							@csrf<div class="row">
 								<div class="col-md-6">
 									<div class="row">
 										<div class="col-md-6 form-group">
@@ -858,8 +856,6 @@
 										<option value="">-- Select Total no. of Subj. --</option>
 										<option value="400">05</option>
 										<option value="480">06</option>
-										<option value="560">07</option>
-										<option value="640">08</option>
 									</select>
 									@error('outOfExt')
 										<span class="text-danger">{{$message}}</span>
