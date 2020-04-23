@@ -43,9 +43,8 @@
 				<div class="tab tab-content justify-content-center">
 					<div class="tab-pane active mt-4" id="sem1Int">
 						<h5 class="mb-4">Sem 1 Internal {{$student->branch}}</h5>
-						<form method="post" class="form" action="{{action('Sem1\StudentAdminSem1Int@store')}}">
-							@csrf<input type="text" name="admissionNo" class="form-control" value="{{$student->admissionNo}}" hidden>
-							<div class="row">
+						<form method="post" class="form" action="{{action('Sem1\StudentAdminSem1Int@store', $student->id)}}">
+							@csrf<div class="row">
 								<div class="col-md-6">
 									<div class="row">
 										<div class="col-md-6 form-group">
@@ -226,7 +225,7 @@
 								<div class="col-md-3">
 									<select class="custom-select" name="outOfInt">
 										<option value="">-- Select Total no. of Subj. --</option>
-										<option value="120">06</option>
+										<option value="150">06</option>
 									</select>
 									@error('outOfInt')
 										<span class="text-danger">{{$message}}</span>
@@ -251,9 +250,8 @@
 					</div>
 					<div class="tab-pane fade mt-4" id="sem1Ext">
 						<h5 class="mb-4">Sem 1 External {{$student->branch}}</h5>
-						<form method="post" class="form" action="{{action('Sem1\StudentAdminSem1Ext@store')}}">
-							@csrf<input type="text" name="admissionNo" class="form-control" value="{{$student->admissionNo}}" hidden>
-							<div class="row">
+						<form method="post" class="form" action="{{action('Sem1\StudentAdminSem1Ext@store', $student->id)}}">
+							@csrf<div class="row">
 								<div class="col-md-6">
 									<div class="row">
 										<div class="col-md-6 form-group">
@@ -434,7 +432,7 @@
 								<div class="col-md-3">
 									<select class="custom-select" name="outOfExt">
 										<option value="">-- Select Total no. of Subj. --</option>
-										<option value="480">06</option>
+										<option value="420">06</option>
 									</select>
 									@error('outOfExt')
 										<span class="text-danger">{{$message}}</span>
