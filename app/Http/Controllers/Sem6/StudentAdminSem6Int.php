@@ -35,7 +35,7 @@ class StudentAdminSem6Int extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
 			'int1' => 'required',
@@ -49,6 +49,7 @@ class StudentAdminSem6Int extends Controller
 			'int4mark' => 'required',
 			'int5mark' => 'required',
 			'outOfInt' => 'required',
+			'remarkInt' => 'required',
 		],[
 			'int1.required' => 'Please select Subject',
 			'int2.required' => 'Please select Subject',
@@ -61,8 +62,10 @@ class StudentAdminSem6Int extends Controller
 			'int4mark.required' => 'Please provide Marks',
 			'int5mark.required' => 'Please provide Marks',
 			'outOfInt.required' => 'Please select No. of Subjects',
+			'remarkInt.required' => 'Please select Remark',
 		]);
 			$sem6Internal = new Sem6Internal;
+			$students = Student::find($id);
 			$sem6Internal -> int1 = $request->get('int1');
 			$sem6Internal -> int1mark = $request->get('int1mark');
 			$sem6Internal -> int2 = $request->get('int2');
@@ -81,7 +84,8 @@ class StudentAdminSem6Int extends Controller
 			$sem6Internal -> int8mark = $request->get('int8mark');
 			$sem6Internal -> total = $request->get('totalIntMark');
 			$sem6Internal -> outOf = $request->get('outOfInt');
-			$sem6Internal -> admissionNo = $request->get('admissionNo');
+			$sem6Internal -> remark = $request->get('remarkInt');
+			$sem6Internal -> admissionNo = $students->admissionNo;
 			
 			$sem6Internal -> save();
 			
