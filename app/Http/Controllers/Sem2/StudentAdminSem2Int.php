@@ -35,7 +35,7 @@ class StudentAdminSem2Int extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
 			'int1' => 'required',
@@ -69,6 +69,7 @@ class StudentAdminSem2Int extends Controller
 			'remarkInt.required' => 'Please select Remark',
 		]);
 			$sem2Internal = new Sem2Internal;
+			$students = Student::find($id);
 			$sem2Internal -> int1 = $request->get('int1');
 			$sem2Internal -> int1mark = $request->get('int1mark');
 			$sem2Internal -> int2 = $request->get('int2');
@@ -84,7 +85,7 @@ class StudentAdminSem2Int extends Controller
 			$sem2Internal -> total = $request->get('totalIntMark');
 			$sem2Internal -> outOf = $request->get('outOfInt');
 			$sem2Internal -> remark = $request->get('remarkInt');
-			$sem2Internal -> admissionNo = $request->get('admissionNo');
+			$sem2Internal -> admissionNo = $students->admissionNo;
 				
 			$sem2Internal -> save();
 			
