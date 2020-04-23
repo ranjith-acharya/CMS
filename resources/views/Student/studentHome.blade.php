@@ -9,7 +9,7 @@
 <a class="dropdown-item" href="{{route('student.edit', Auth::user()->id)}}">
 	Edit Profile
 </a>
-<a class="dropdown-item" href="{{route('student.results.index', Auth::user()->id)}}">
+<a class="dropdown-item" href="">
 	Results
 </a>
 @endsection
