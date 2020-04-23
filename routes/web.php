@@ -21,49 +21,49 @@ Auth::routes();
 
 //Routing for Admin
 Route::resource('/home', 'HomeController');
-Route::resource('/admin/students', 'StudentAdminController');
-Route::get('/admin/students/result/{studentID}', 'StudentAdminResultController@index')->name('results.index');
+Route::resource('/students', 'StudentAdminController');
+Route::get('/students/{student}/result', 'StudentAdminResultController@index')->name('results.index');
 //Sem1 Student Admin Controller
-Route::get('/admin/students/result/sem1/{studentID}', 'Sem1\StudentAdminSem1Controller@index');
-Route::resource('/admin/students/sem1/internalMarks', 'Sem1\StudentAdminSem1Int');
-Route::resource('/admin/students/sem1/externalMarks', 'Sem1\StudentAdminSem1Ext');
-//
+Route::get('/students/{student}/result/sem1', 'Sem1\StudentAdminSem1Controller@index');
+Route::resource('students.sem1Int', 'Sem1\StudentAdminSem1Int')->shallow();
+Route::resource('students.sem1Ext', 'Sem1\StudentAdminSem1Ext')->shallow();
+//"/admin/students/sem1/internalMarks"
 //Sem2 Student Admin Controller
-Route::get('/admin/students/result/sem2/{studentID}', 'Sem2\StudentAdminSem2Controller@index');
-Route::resource('/admin/students/sem2/internalMarks', 'Sem2\StudentAdminSem2Int');
-Route::resource('/admin/students/sem2/externalMarks', 'Sem2\StudentAdminSem2Ext');
+Route::get('/students/{student}/result/sem2', 'Sem2\StudentAdminSem2Controller@index');
+Route::resource('students.sem2Int', 'Sem2\StudentAdminSem2Int')->shallow();
+Route::resource('students.sem2Ext', 'Sem2\StudentAdminSem2Ext')->shallow();
 //
 //Sem3 Student Admin Controller
-Route::get('/admin/students/result/sem3/{studentID}', 'Sem3\StudentAdminSem3Controller@index');
-Route::resource('/admin/students/sem3/internalMarks', 'Sem3\StudentAdminSem3Int');
-Route::resource('/admin/students/sem3/externalMarks', 'Sem3\StudentAdminSem3Ext');
+Route::get('/students/{student}/result/sem3', 'Sem3\StudentAdminSem3Controller@index');
+Route::resource('students.sem3Int', 'Sem3\StudentAdminSem3Int')->shallow();
+Route::resource('students.sem3Ext', 'Sem3\StudentAdminSem3Ext')->shallow();
 //
 //Sem4 Student Admin Controller
-Route::get('/admin/students/result/sem4/{studentID}', 'Sem4\StudentAdminSem4Controller@index');
-Route::resource('/admin/students/sem4/internalMarks', 'Sem4\StudentAdminSem4Int');
-Route::resource('/admin/students/sem4/externalMarks', 'Sem4\StudentAdminSem4Ext');
+Route::get('/students/{student}/result/sem4', 'Sem4\StudentAdminSem4Controller@index');
+Route::resource('students.sem4Int', 'Sem4\StudentAdminSem4Int')->shallow();
+Route::resource('students.sem4Ext', 'Sem4\StudentAdminSem4Ext')->shallow();
 //
 //Sem5 Student Admin Controller
-Route::get('/admin/students/result/sem5/{studentID}', 'Sem5\StudentAdminSem5Controller@index');
-Route::resource('/admin/students/sem5/internalMarks', 'Sem5\StudentAdminSem5Int');
-Route::resource('/admin/students/sem5/externalMarks', 'Sem5\StudentAdminSem5Ext');
+Route::get('/students/{student}/result/sem5', 'Sem5\StudentAdminSem5Controller@index');
+Route::resource('students.sem5Int', 'Sem5\StudentAdminSem5Int')->shallow();
+Route::resource('students.sem5Ext', 'Sem5\StudentAdminSem5Ext')->shallow();
 //
 //Sem6 Student Admin Controller
-Route::get('/admin/students/result/sem6/{studentID}', 'Sem6\StudentAdminSem6Controller@index');
-Route::resource('/admin/students/sem6/internalMarks', 'Sem6\StudentAdminSem6Int');
-Route::resource('/admin/students/sem6/externalMarks', 'Sem6\StudentAdminSem6Ext');
+Route::get('/students/{student}/result/sem6', 'Sem6\StudentAdminSem6Controller@index');
+Route::resource('students.sem6Int', 'Sem6\StudentAdminSem6Int')->shallow();
+Route::resource('students.sem6Ext', 'Sem6\StudentAdminSem6Ext')->shallow();
 //
 //Sem7 Student Admin Controller
-Route::get('/admin/students/result/sem7/{studentID}', 'Sem7\StudentAdminSem7Controller@index');
-Route::resource('/admin/students/sem7/internalMarks', 'Sem7\StudentAdminSem7Int');
-Route::resource('/admin/students/sem7/externalMarks', 'Sem7\StudentAdminSem7Ext');
+Route::get('/students/{student}/result/sem7', 'Sem7\StudentAdminSem7Controller@index');
+Route::resource('students.sem7Int', 'Sem7\StudentAdminSem7Int')->shallow();
+Route::resource('students.sem7Ext', 'Sem7\StudentAdminSem7Ext')->shallow();
 //
 //Sem8 Student Admin Controller
-Route::get('/admin/students/result/sem8/{studentID}', 'Sem8\StudentAdminSem8Controller@index');
-Route::resource('/admin/students/sem8/internalMarks', 'Sem8\StudentAdminSem8Int');
-Route::resource('/admin/students/sem8/externalMarks', 'Sem8\StudentAdminSem8Ext');
+Route::get('/students/{student}/result/sem8', 'Sem8\StudentAdminSem8Controller@index');
+Route::resource('students.sem8Int', 'Sem8\StudentAdminSem8Int')->shallow();
+Route::resource('students.sem8Ext', 'Sem8\StudentAdminSem8Ext')->shallow();
 //
-Route::resource('/admin/staffs', 'StaffAdminController');
+Route::resource('/staffs', 'StaffAdminController');
 
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('admin.logout');
 
