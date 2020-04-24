@@ -87,7 +87,11 @@ class StudentAdminSem1Int extends Controller
 			$sem1Internal -> total = $request->get('totalIntMark');
 			$sem1Internal -> outOf = $request->get('outOfInt');
 			$sem1Internal -> remark = $request->get('remarkInt');
+			$sem1Internal -> studentId = $students->id;
 			$sem1Internal -> admissionNo = $students->admissionNo;
+			$sem1Internal -> firstName = $students->firstName;
+			$sem1Internal -> lastName = $students->lastName;
+			$sem1Internal -> branch = $students->branch;
 			
 			$sem1Internal -> save();
 			
@@ -102,7 +106,8 @@ class StudentAdminSem1Int extends Controller
      */
     public function show($id)
     {
-        //
+        $sem1Internal = Sem1Internal::find($id);
+		return view('result.sem1.studentAdminSem1IntShow', compact('sem1Internal', 'id'));
     }
 
     /**
