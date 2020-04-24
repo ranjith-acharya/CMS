@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,6 +61,8 @@ Route::resource('students.sem7Ext', 'Sem7\StudentAdminSem7Ext')->shallow();
 Route::get('/students/{student}/result/sem8', 'Sem8\StudentAdminSem8Controller@index');
 Route::resource('students.sem8Int', 'Sem8\StudentAdminSem8Int')->shallow();
 Route::resource('students.sem8Ext', 'Sem8\StudentAdminSem8Ext')->shallow();
+//
+Route::get('notification/read', 'StudentController@markRead')->name('markRead');
 //
 Route::resource('/staffs', 'StaffAdminController');
 
