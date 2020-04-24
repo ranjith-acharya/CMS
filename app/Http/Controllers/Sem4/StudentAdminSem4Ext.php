@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Sem4;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Notifications\ResultPush;
 use App\Student;
 use App\Sem4External;
 
@@ -66,6 +67,7 @@ class StudentAdminSem4Ext extends Controller
 		]);
 			$sem4External = new Sem4External;
 			$students = Student::find($id);
+			Student::find($id)->notify(new ResultPush);
 			$sem4External -> ext1 = $request->get('ext1');
 			$sem4External -> ext1mark = $request->get('ext1mark');
 			$sem4External -> ext2 = $request->get('ext2');
