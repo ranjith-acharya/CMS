@@ -22,10 +22,20 @@
 				</a>
 			</div>
 			<div class="modal-body card-body">
-				<div class="mb-4">
-					{{$student->firstName}}&nbsp;{{$student->lastName}}<br>
-					<a href="mailto:{{$student->email}}" class="link">{{$student->email}}</a><br>
-					{{$student->year}}&nbsp;{{$student->branch}}&nbsp;{{$student->stream}}
+				<div class="row mb-4">
+					<div class="col-md-6">
+						{{$student->firstName}}&nbsp;{{$student->lastName}}<br>
+						<a href="mailto:{{$student->email}}" class="link">{{$student->email}}</a><br>
+						{{$student->year}}&nbsp;{{$student->branch}}&nbsp;{{$student->stream}}
+					</div>
+					<div class="col-md-6">
+						<!--<div class="dropdown dropdown-sm">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Internal</button>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="{{route('students.sem1Int.index', $student->id)}}">Sem 1</a>
+							</div>
+						</div>-->
+					</div>
 				</div>
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered">
