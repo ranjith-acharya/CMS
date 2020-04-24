@@ -33,6 +33,29 @@
 			@endif
 			@else
 				<li class="nav-item dropdown">
+					<a class="nav-link" href="#" data-toggle="dropdown" role="button">
+						<i class="fa fa-bell"></i>
+						@if(Auth::user()->unreadNotifications->count())
+						<sup><span class="badge badge-danger">{{Auth::user()->unreadNotifications->count()}}</span></sup>
+						@endif
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						@if(Auth::user()->unreadNotifications->count() == 0)
+							<a class="dropdown-item text-info link">No New Notification</a>
+						@endif
+						@if(Auth::user()->unreadNotifications->count() > 0)
+							<a class="dropdown-item text-primary" href="{{route('markRead')}}" style="font-size:14px;">Mark as Read</a>
+							@foreach(Auth::user()->unreadNotifications as $notification)
+								<a class="dropdown-item text-danger">{{$notification->data['data']}}</a>
+							@endforeach
+						@endif
+						@foreach(Auth::user()->readNotifications as $notification)
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item text-success">{{$notification->data['data']}}</a>
+						@endforeach
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
 					<a id="navbarDropdown" class="nav-link text-white dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 						<img src="/img/student/{{Auth::user()->avatar}}" class="img-profile img-responsive rounded-circle" width="30px" height="30px">&nbsp;
 						{{ Auth::user()->firstName }} <span class="caret"></span>
