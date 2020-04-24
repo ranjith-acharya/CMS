@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Sem2;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Notifications\ResultPush;
 use App\Student;
 use App\Sem2Internal;
 
@@ -70,6 +71,7 @@ class StudentAdminSem2Int extends Controller
 		]);
 			$sem2Internal = new Sem2Internal;
 			$students = Student::find($id);
+			Student::find($id)->notify(new ResultPush);
 			$sem2Internal -> int1 = $request->get('int1');
 			$sem2Internal -> int1mark = $request->get('int1mark');
 			$sem2Internal -> int2 = $request->get('int2');
