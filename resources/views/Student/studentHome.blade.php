@@ -31,6 +31,17 @@
 			</div>
 			@endif
 			<div class="modal-body">
+			@foreach(Auth::user()->unreadNotifications as $notification)
+				<div class="toast" data-autohide="false">
+					<div class="toast-header">
+						<strong class="mr-auto text-primary">New Notification</strong>
+						<button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+					</div>
+					<div class="toast-body">
+					<span class="text-danger">{{$notification->data['data']}}</span>
+					</div>
+				</div>
+			@endforeach
 				<div class="row mt-2">
 					<div class="col-md-3">
 						<img src="/img/student/{{Auth::user()->avatar}}" class="img-responsive img-thumbnail"><br>
@@ -96,4 +107,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('custom-js')
+<script>
+$(document).ready(function(){
+  $('.toast').toast('show');
+});
+</script>
 @endsection
