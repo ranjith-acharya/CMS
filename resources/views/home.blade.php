@@ -82,6 +82,84 @@
 					</div>
 				</div>
 			</div>
+			<div class="container col-md-10 text-center">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="dropdown">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 1</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem1Int')}}">Internal</a>
+								<a class="dropdown-item" href="">External</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="dropdown">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 2</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="">Internal</a>
+								<a class="dropdown-item" href="">External</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="dropdown">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 3</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="">Internal</a>
+								<a class="dropdown-item" href="">External</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="dropdown">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 4</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="">Internal</a>
+								<a class="dropdown-item" href="">External</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-md-3">
+						<div class="dropdown">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 5</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="">Internal</a>
+								<a class="dropdown-item" href="">External</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="dropdown">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 6</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="">Internal</a>
+								<a class="dropdown-item" href="">External</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="dropdown">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 7</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="">Internal</a>
+								<a class="dropdown-item" href="">External</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="dropdown">
+							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 8</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="">Internal</a>
+								<a class="dropdown-item" href="">External</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
     </div>
 </div>
