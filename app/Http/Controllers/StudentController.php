@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use App\Student;
+use Auth;
 
 class StudentController extends Controller
 {
@@ -122,4 +123,8 @@ class StudentController extends Controller
     {
         //
     }
+	public function markRead(){
+		Auth::user()->unreadNotifications->markAsRead();
+		return redirect()->back();
+	}
 }
