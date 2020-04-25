@@ -87,7 +87,11 @@ class StudentAdminSem6Ext extends Controller
 			$sem6External -> total = $request->get('totalExtMark');
 			$sem6External -> outOf = $request->get('outOfExt');
 			$sem6External -> remark = $request->get('remarkExt');
+			$sem6External -> studentId = $students->id;
 			$sem6External -> admissionNo = $students->admissionNo;
+			$sem6External -> firstName = $students->firstName;
+			$sem6External -> lastName = $students->lastName;
+			$sem6External -> branch = $students->branch;
 			
 			$sem6External -> save();
 			
@@ -102,7 +106,8 @@ class StudentAdminSem6Ext extends Controller
      */
     public function show($id)
     {
-        //
+        $sem6External = Sem6External::find($id);
+		return view('result.sem6.studentAdminSem6ExtShow', compact('sem6External', 'id'));
     }
 
     /**
@@ -113,7 +118,8 @@ class StudentAdminSem6Ext extends Controller
      */
     public function edit($id)
     {
-        //
+        $sem6External = Sem6External::find($id);
+		return view('result.sem6.studentAdminSem6ExtEdit', compact('sem6External', 'id'));
     }
 
     /**
@@ -125,7 +131,58 @@ class StudentAdminSem6Ext extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+			'ext1' => 'required',
+			'ext2' => 'required',
+			'ext3' => 'required',
+			'ext4' => 'required',
+			'ext5' => 'required',
+			'ext1mark' => 'required',
+			'ext2mark' => 'required',
+			'ext3mark' => 'required',
+			'ext4mark' => 'required',
+			'ext5mark' => 'required',
+			'outOfExt' => 'required',
+			'remarkExt' => 'required',
+		],[
+			'ext1.required' => 'Please select Subject',
+			'ext2.required' => 'Please select Subject',
+			'ext3.required' => 'Please select Subject',
+			'ext4.required' => 'Please select Subject',
+			'ext5.required' => 'Please select Subject',
+			'ext1mark.required' => 'Please provide Marks',
+			'ext2mark.required' => 'Please provide Marks',
+			'ext3mark.required' => 'Please provide Marks',
+			'ext4mark.required' => 'Please provide Marks',
+			'ext5mark.required' => 'Please provide Marks',
+			'outOfExt.required' => 'Please select No. of Subjects',
+			'remarkExt.required' => 'Please select Remark',
+		]);
+			$sem6External = Sem6External::find($id);
+			
+			$sem6External -> ext1 = $request->get('ext1');
+			$sem6External -> ext1mark = $request->get('ext1mark');
+			$sem6External -> ext2 = $request->get('ext2');
+			$sem6External -> ext2mark = $request->get('ext2mark');
+			$sem6External -> ext3 = $request->get('ext3');
+			$sem6External -> ext3mark = $request->get('ext3mark');
+			$sem6External -> ext4 = $request->get('ext4');
+			$sem6External -> ext4mark = $request->get('ext4mark');
+			$sem6External -> ext5 = $request->get('ext5');
+			$sem6External -> ext5mark = $request->get('ext5mark');
+			$sem6External -> ext6 = $request->get('ext6');
+			$sem6External -> ext6mark = $request->get('ext6mark');
+			$sem6External -> ext7 = $request->get('ext7');
+			$sem6External -> ext7mark = $request->get('ext7mark');
+			$sem6External -> ext8 = $request->get('ext8');
+			$sem6External -> ext8mark = $request->get('ext8mark');
+			$sem6External -> total = $request->get('totalExtMark');
+			$sem6External -> outOf = $request->get('outOfExt');
+			$sem6External -> remark = $request->get('remarkExt');
+			
+			$sem6External -> save();
+			
+			return redirect()->back()->with('success', 'Sem6 External marks Updated.!!');
     }
 
     /**
