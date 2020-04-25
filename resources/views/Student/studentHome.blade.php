@@ -9,7 +9,7 @@
 <a class="dropdown-item" href="{{route('student.edit', Auth::user()->id)}}">
 	Edit Profile
 </a>
-<a class="dropdown-item" href="">
+<a class="dropdown-item" href="{{route('student.result.index', Auth::user()->id)}}">
 	Results
 </a>
 @endsection
@@ -31,7 +31,7 @@
 			</div>
 			@endif
 			<div class="modal-body">
-			@foreach(Auth::user()->unreadNotifications as $notification)
+			<!--@foreach(Auth::user()->unreadNotifications as $notification)
 				<div class="toast" data-autohide="false">
 					<div class="toast-header">
 						<strong class="mr-auto text-primary">New Notification</strong>
@@ -41,7 +41,7 @@
 					<span class="text-danger">{{$notification->data['data']}}</span>
 					</div>
 				</div>
-			@endforeach
+			@endforeach-->
 				<div class="row mt-2">
 					<div class="col-md-3">
 						<img src="/img/student/{{Auth::user()->avatar}}" class="img-responsive img-thumbnail"><br>
