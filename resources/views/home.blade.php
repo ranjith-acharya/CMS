@@ -89,7 +89,7 @@
 							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 1</button>
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem1Int')}}">Internal</a>
-								<a class="dropdown-item" href="">External</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem1Ext')}}">External</a>
 							</div>
 						</div>
 					</div>
@@ -97,8 +97,8 @@
 						<div class="dropdown">
 							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 2</button>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="">Internal</a>
-								<a class="dropdown-item" href="">External</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem2Int')}}">Internal</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem2Ext')}}">External</a>
 							</div>
 						</div>
 					</div>
@@ -106,8 +106,8 @@
 						<div class="dropdown">
 							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 3</button>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="">Internal</a>
-								<a class="dropdown-item" href="">External</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem3Int')}}">Internal</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem3Ext')}}">External</a>
 							</div>
 						</div>
 					</div>
@@ -115,8 +115,8 @@
 						<div class="dropdown">
 							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 4</button>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="">Internal</a>
-								<a class="dropdown-item" href="">External</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem4Int')}}">Internal</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem4Ext')}}">External</a>
 							</div>
 						</div>
 					</div>
@@ -126,8 +126,8 @@
 						<div class="dropdown">
 							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 5</button>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="">Internal</a>
-								<a class="dropdown-item" href="">External</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem5Int')}}">Internal</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem5Ext')}}">External</a>
 							</div>
 						</div>
 					</div>
@@ -135,8 +135,8 @@
 						<div class="dropdown">
 							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 6</button>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="">Internal</a>
-								<a class="dropdown-item" href="">External</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem6Int')}}">Internal</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem6Ext')}}">External</a>
 							</div>
 						</div>
 					</div>
@@ -144,8 +144,8 @@
 						<div class="dropdown">
 							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 7</button>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="">Internal</a>
-								<a class="dropdown-item" href="">External</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem7Int')}}">Internal</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem7Ext')}}">External</a>
 							</div>
 						</div>
 					</div>
@@ -153,8 +153,8 @@
 						<div class="dropdown">
 							<button class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">Sem 8</button>
 							<div class="dropdown-menu">
-								<a class="dropdown-item" href="">Internal</a>
-								<a class="dropdown-item" href="">External</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem8Int')}}">Internal</a>
+								<a class="dropdown-item" href="{{action('StudentAdminResultController@sem8Ext')}}">External</a>
 							</div>
 						</div>
 					</div>
