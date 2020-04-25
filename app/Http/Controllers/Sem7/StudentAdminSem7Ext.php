@@ -93,7 +93,11 @@ class StudentAdminSem7Ext extends Controller
 			$sem7External -> total = $request->get('totalExtMark');
 			$sem7External -> outOf = $request->get('outOfExt');
 			$sem7External -> remark = $request->get('remarkExt');
+			$sem7External -> studentId = $students->id;
 			$sem7External -> admissionNo = $students->admissionNo;
+			$sem7External -> firstName = $students->firstName;
+			$sem7External -> lastName = $students->lastName;
+			$sem7External -> branch = $students->branch;
 				
 			$sem7External -> save();
 			

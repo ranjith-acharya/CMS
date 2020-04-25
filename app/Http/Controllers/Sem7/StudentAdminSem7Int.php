@@ -93,7 +93,11 @@ class StudentAdminSem7Int extends Controller
 			$sem7Internal -> total = $request->get('totalIntMark');
 			$sem7Internal -> outOf = $request->get('outOfInt');
 			$sem7Internal -> remark = $request->get('remarkInt');
+			$sem7Internal -> studentId = $students->id;
 			$sem7Internal -> admissionNo = $students->admissionNo;
+			$sem7Internal -> firstName = $students->firstName;
+			$sem7Internal -> lastName = $students->lastName;
+			$sem7Internal -> branch = $students->branch;
 				 
 			$sem7Internal -> save();
 			
