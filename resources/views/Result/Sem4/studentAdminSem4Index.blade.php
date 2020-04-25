@@ -78,7 +78,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -141,7 +141,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -206,7 +206,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -269,7 +269,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -334,7 +334,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -397,7 +397,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -496,7 +496,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -559,7 +559,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -624,7 +624,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -687,7 +687,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -752,7 +752,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
@@ -815,7 +815,7 @@
 													<option value="Applied Maths - 4">Applied Maths - 4 (AM-4)</option>
 													<option value="Electronic Devices & Circuit - 2">Electronic Devices & Circuit - 2</option>
 													<option value="Linear Integrated Circuits">Linear Integrated Circuits</option>
-													<option value="Principleof Comm. Engg.">Principle of Comm. Engg.</option>
+													<option value="Principle of Comm. Engg.">Principle of Comm. Engg.</option>
 													<option value="Signals & System">Signals & System</option>
 												</optgroup>
 												<optgroup label="Information Technology">
