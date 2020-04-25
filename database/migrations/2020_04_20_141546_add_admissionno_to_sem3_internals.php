@@ -15,6 +15,10 @@ class AddAdmissionnoToSem3Internals extends Migration
     {
         Schema::table('sem3_internals', function (Blueprint $table) {
             $table->string('admissionNo')->unique();
+			$table->string('studentId');
+			$table->string('firstName');
+			$table->string('lastName');
+			$table->string('branch');
         });
     }
 
