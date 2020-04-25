@@ -21,8 +21,24 @@ Auth::routes();
 //Routing for Admin
 Route::resource('/home', 'HomeController');
 Route::resource('/students', 'StudentAdminController');
+
 Route::get('/students/{student}/result', 'StudentAdminResultController@index')->name('results.index');
 Route::get('/students/sem1/internal/index', 'StudentAdminResultController@sem1Int');
+Route::get('/students/sem1/external/index', 'StudentAdminResultController@sem1Ext');
+Route::get('/students/sem2/internal/index', 'StudentAdminResultController@sem2Int');
+Route::get('/students/sem2/external/index', 'StudentAdminResultController@sem2Ext');
+Route::get('/students/sem3/internal/index', 'StudentAdminResultController@sem3Int');
+Route::get('/students/sem3/external/index', 'StudentAdminResultController@sem3Ext');
+Route::get('/students/sem4/internal/index', 'StudentAdminResultController@sem4Int');
+Route::get('/students/sem4/external/index', 'StudentAdminResultController@sem4Ext');
+Route::get('/students/sem5/internal/index', 'StudentAdminResultController@sem5Int');
+Route::get('/students/sem5/external/index', 'StudentAdminResultController@sem5Ext');
+Route::get('/students/sem6/internal/index', 'StudentAdminResultController@sem6Int');
+Route::get('/students/sem6/external/index', 'StudentAdminResultController@sem6Ext');
+Route::get('/students/sem7/internal/index', 'StudentAdminResultController@sem7Int');
+Route::get('/students/sem7/external/index', 'StudentAdminResultController@sem7Ext');
+Route::get('/students/sem8/internal/index', 'StudentAdminResultController@sem8Int');
+Route::get('/students/sem8/external/index', 'StudentAdminResultController@sem8Ext');
 
 //Sem1 Student Admin Controller
 Route::get('/students/{student}/result/sem1', 'Sem1\StudentAdminSem1Controller@index');
@@ -83,6 +99,16 @@ Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('admin.logou
 Route::get('/student/login', 'Auth\StudentLoginController@showLoginForm')->name('student.login');
 Route::post('/student/login', 'Auth\StudentLoginController@login')->name('student.login.submit');
 Route::resource('/student', 'StudentController');
+
+Route::get('/student/result/{student}', 'StudentResultController@index')->name('student.result.index');
+Route::get('/student/result/sem1/marks', 'StudentResultController@sem1')->name('student.result.sem1');
+Route::get('/student/result/sem2/marks', 'StudentResultController@sem2')->name('student.result.sem2');
+Route::get('/student/result/sem3/marks', 'StudentResultController@sem3')->name('student.result.sem3');
+Route::get('/student/result/sem4/marks', 'StudentResultController@sem4')->name('student.result.sem4');
+Route::get('/student/result/sem5/marks', 'StudentResultController@sem5')->name('student.result.sem5');
+Route::get('/student/result/sem6/marks', 'StudentResultController@sem6')->name('student.result.sem6');
+Route::get('/student/result/sem7/marks', 'StudentResultController@sem7')->name('student.result.sem7');
+Route::get('/student/result/sem8/marks', 'StudentResultController@sem8')->name('student.result.sem8');
 
 Route::get('/student/logout', 'Auth\StudentLoginController@logout')->name('student.logout');
 
