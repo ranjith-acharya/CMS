@@ -15,6 +15,10 @@ class AddAdmissionnoToSem5Externals extends Migration
     {
         Schema::table('sem5_externals', function (Blueprint $table) {
             $table->string('admissionNo')->unique();
+			$table->string('studentId');
+			$table->string('firstName');
+			$table->string('lastName');
+			$table->string('branch');
         });
     }
 
