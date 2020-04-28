@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Sem6;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Notifications\ResultPush;
+use App\Notifications\ResultSem6;
 use App\Student;
 use App\Sem6External;
 
@@ -67,7 +67,7 @@ class StudentAdminSem6Ext extends Controller
 		]);
 			$sem6External = new Sem6External;
 			$students = Student::find($id);
-			Student::find($id)->notify(new ResultPush);
+			Student::find($id)->notify(new ResultSem6);
 			$sem6External -> ext1 = $request->get('ext1');
 			$sem6External -> ext1mark = $request->get('ext1mark');
 			$sem6External -> ext2 = $request->get('ext2');
