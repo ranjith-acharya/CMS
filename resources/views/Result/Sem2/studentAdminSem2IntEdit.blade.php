@@ -191,12 +191,12 @@
 									<select name="int6" class="custom-select form-control">
 										<option value="">-- Select Internal Subj. --</option>
 										<optgroup label="Common Year">
-											<option value="Applied Chemistry - 2" @if($sem2Internal->int1 == 'Applied Chemistry - 2') selected @endif>Applied Chemistry - 2 (AC-2)</option>
-											<option value="Applied Mathematics - 2" @if($sem2Internal->int1 == 'Applied Mathematics - 2') selected @endif>Applied Mathematics - 2 (AM-2)</option>
-											<option value="Applied Physics - 2" @if($sem2Internal->int1 == 'Applied Physics - 2') selected @endif>Applied Physics - 2 (AP-2)</option>
-											<option value="Communication Skills." @if($sem2Internal->int1 == 'Communication Skills.') selected @endif>Communication Skills (CS)</option>
-											<option value="Engg. Drawing" @if($sem2Internal->int1 == 'Engg. Drawing') selected @endif>Enginnering Drawing (ED)</option>
-											<option value="Structured Programming Approach"  @if($sem2Internal->int1 == 'Structured Programming Approach') selected @endif>Structured Programming Approach (SPA)</option>
+											<option value="Applied Chemistry - 2" @if($sem2Internal->int6 == 'Applied Chemistry - 2') selected @endif>Applied Chemistry - 2 (AC-2)</option>
+											<option value="Applied Mathematics - 2" @if($sem2Internal->int6 == 'Applied Mathematics - 2') selected @endif>Applied Mathematics - 2 (AM-2)</option>
+											<option value="Applied Physics - 2" @if($sem2Internal->int6 == 'Applied Physics - 2') selected @endif>Applied Physics - 2 (AP-2)</option>
+											<option value="Communication Skills." @if($sem2Internal->int6 == 'Communication Skills.') selected @endif>Communication Skills (CS)</option>
+											<option value="Engg. Drawing" @if($sem2Internal->int6 == 'Engg. Drawing') selected @endif>Enginnering Drawing (ED)</option>
+											<option value="Structured Programming Approach"  @if($sem2Internal->int6 == 'Structured Programming Approach') selected @endif>Structured Programming Approach (SPA)</option>
 										</optgroup>
 									</select>
 									@error('int6')
