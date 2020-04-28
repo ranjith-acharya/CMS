@@ -48,9 +48,9 @@
 							<tbody class="text-center">
 								<tr>
 									<td><a class="link" href="{{route('student.result.sem1')}}">Sem 1</a></td>
-									<td>Sem 2</td>
-									<td>Sem 3</td>
-									<td>Sem 4</td>
+									<td><a class="link" href="{{route('student.result.sem2')}}">Sem 2</a></td>
+									<td><a class="link" href="{{route('student.result.sem3')}}">Sem 3</a></td>
+									<td><a class="link" href="{{route('student.result.sem4')}}">Sem 4</a></td>
 								</tr>
 							</tbody>
 							<thead>
@@ -61,10 +61,10 @@
 							</thead>
 							<tbody class="text-center">
 								<tr>
-									<td>Sem 5</td>
-									<td>Sem 6</td>
-									<td>Sem 7</td>
-									<td>Sem 8</td>
+									<td><a class="link" href="{{route('student.result.sem5')}}">Sem 5</a></td>
+									<td><a class="link" href="{{route('student.result.sem6')}}">Sem 6</a></td>
+									<td><a class="link" href="#">Sem 7</a></td>
+									<td><a class="link" href="#">Sem 8</a></td>
 								</tr>
 							</tbody>
 						</table>
