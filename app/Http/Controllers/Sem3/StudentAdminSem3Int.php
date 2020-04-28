@@ -67,7 +67,7 @@ class StudentAdminSem3Int extends Controller
 		]);
 			$sem3Internal = new Sem3Internal;
 			$students = Student::find($id);
-			Student::find($id)->notify(new ResultPush);
+			
 			$sem3Internal -> int1 = $request->get('int1');
 			$sem3Internal -> int1mark = $request->get('int1mark');
 			$sem3Internal -> int2 = $request->get('int2');
