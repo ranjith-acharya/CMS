@@ -105,23 +105,6 @@
 								</tr>
 							</tfoot>
 						</table>
-							<script>
-							$(document).ready(function(){
-								var intTotal = {{$sem4Int->total}};
-								var intOutof = {{$sem4Int->outOf}};
-								var extOutof = {{$sem4Ext->outOf}};
-								//alert(intOutof);
-								var extTotal = {{$sem4Ext->total}};
-								var total = intTotal + extTotal;
-								var outOf = intOutof + extOutof;
-								//alert(total);
-								document.getElementById('totalSem4').innerHTML = total+" / "+outOf;
-								var perc = total*100/outOf;
-								var cgpa = perc/9.5;
-								document.getElementById('cgpaSem4').innerHTML = cgpa.toFixed(2);
-								console.log(cgpa);
-							});
-							</script>
 						@endforeach
 					@endforeach
 					@endif
@@ -131,4 +114,24 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('custom-js')
+<script>
+$(document).ready(function(){
+	var intTotal = {{$sem4Int->total}};
+	var intOutof = {{$sem4Int->outOf}};
+	var extOutof = {{$sem4Ext->outOf}};
+	//alert(intOutof);
+	var extTotal = {{$sem4Ext->total}};
+	var total = intTotal + extTotal;
+	var outOf = intOutof + extOutof;
+	//alert(total);
+	document.getElementById('totalSem4').innerHTML = total+" / "+outOf;
+	var perc = total*100/outOf;
+	var cgpa = perc/9.5;
+	document.getElementById('cgpaSem4').innerHTML = cgpa.toFixed(2);
+	console.log(cgpa);
+});
+</script>
 @endsection
