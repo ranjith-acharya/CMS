@@ -111,6 +111,7 @@ Route::get('/student/result/sem7/marks', 'StudentResultController@sem7')->name('
 Route::get('/student/result/sem8/marks', 'StudentResultController@sem8')->name('student.result.sem8');
 
 Route::get('/student/logout', 'Auth\StudentLoginController@logout')->name('student.logout');
+//
 
 //Routing for Staff
 Route::get('/staff/login', 'Auth\StaffLoginController@showLoginForm')->name('staff.login');
