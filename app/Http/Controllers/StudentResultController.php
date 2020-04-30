@@ -28,8 +28,33 @@ class StudentResultController extends Controller
 		$this->middleware('auth:student');
 	}
 	public function index($id){
+		$sem1Internal = Sem1Internal::where('studentId', Auth::user()->id)->get();
+		$sem1External = Sem1External::where('studentId', Auth::user()->id)->get();
+		
+		$sem2Internal = Sem2Internal::where('studentId', Auth::user()->id)->get();
+		$sem2External = Sem2External::where('studentId', Auth::user()->id)->get();
+		
+		$sem3Internal = Sem3Internal::where('studentId', Auth::user()->id)->get();
+		$sem3External = Sem3External::where('studentId', Auth::user()->id)->get();
+		
+		$sem4Internal = Sem4Internal::where('studentId', Auth::user()->id)->get();
+		$sem4External = Sem4External::where('studentId', Auth::user()->id)->get();
+		
+		$sem5Internal = Sem5Internal::where('studentId', Auth::user()->id)->get();
+		$sem5External = Sem5External::where('studentId', Auth::user()->id)->get();
+		
+		$sem6Internal = Sem6Internal::where('studentId', Auth::user()->id)->get();
+		$sem6External = Sem6External::where('studentId', Auth::user()->id)->get();
+		
+		$sem7Internal = Sem7Internal::where('studentId', Auth::user()->id)->get();
+		$sem7External = Sem7External::where('studentId', Auth::user()->id)->get();
+		
+		$sem8Internal = Sem8Internal::where('studentId', Auth::user()->id)->get();
+		$sem8External = Sem8External::where('studentId', Auth::user()->id)->get();
+		
 		$student = Student::find($id);
-		return view('student.studentResult', compact('student', 'id'));
+		
+		return view('student.studentResult', compact('student', 'id', 'sem1Internal', 'sem1External', 'sem2Internal', 'sem2External', 'sem3Internal', 'sem3External', 'sem4Internal', 'sem4External', 'sem5Internal', 'sem5External', 'sem6Internal', 'sem6External', 'sem7Internal', 'sem7External', 'sem8Internal', 'sem8External'));
 	}
 	public function sem1(){
 		$sem1Internal = Sem1Internal::where('studentId', Auth::user()->id)->get();
