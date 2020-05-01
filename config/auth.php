@@ -66,6 +66,16 @@ return [
             'provider' => 'staffs',
             'hash' => false,
         ],
+		'company' => [
+            'driver' => 'session',
+            'provider' => 'companys',
+        ],
+
+        'company-api' => [
+            'driver' => 'token',
+            'provider' => 'companys',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -97,6 +107,10 @@ return [
 		'staffs' => [
             'driver' => 'eloquent',
             'model' => App\Staff::class,
+        ],
+		'companys' => [
+            'driver' => 'eloquent',
+            'model' => App\Company::class,
         ],
 
         // 'users' => [
@@ -135,6 +149,12 @@ return [
         ],
 		'staffs' => [
             'provider' => 'staffs',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+		'companys' => [
+            'provider' => 'companys',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
