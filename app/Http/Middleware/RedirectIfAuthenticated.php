@@ -29,6 +29,11 @@ class RedirectIfAuthenticated
 					return redirect()->route('staff.index');
 				}
 				break;
+			case 'company':
+				if(Auth::guard($guard)->check()){
+					return redirect()->route('company.index');
+				}
+				break;
 			default:
 				if(Auth::guard($guard)->check()){
 					return redirect()->route('home.index');
