@@ -8,6 +8,7 @@
 		Login
 	</button>
 	<div class="dropdown-menu dropdown-menu">
+	<a class="dropdown-item" href="{{url('/company/login')}}">Company Login</a>
 		<a class="dropdown-item" href="{{route('staff.login')}}">Staff Login</a>
 		<a class="dropdown-item" href="{{route('student.login')}}">Student Login</a>
 	</div>
