@@ -118,5 +118,14 @@ Route::get('/staff/login', 'Auth\StaffLoginController@showLoginForm')->name('sta
 Route::post('/staff/login', 'Auth\StaffLoginController@login')->name('staff.login.submit');
 Route::resource('/staff', 'StaffController');
 Route::get('/staff/logout', 'Auth\StaffLoginController@logout')->name('staff.logout');
+//
+
+//Routing for Company
+Route::get('/company/login', 'Auth\CompanyLoginController@showLoginForm')->name('company.login');
+Route::post('/company/login', 'Auth\CompanyLoginController@login')->name('company.login.submit');
+Route::get('/company/new', 'Auth\CompanyLoginController@showRegisterForm')->name('company.register');
+Route::post('/company/new', 'Auth\CompanyLoginController@store')->name('company.register.submit');
+Route::resource('/company', 'CompanyController');
+Route::get('/company/logout', 'Auth\CompanyLoginController@logout')->name('company.logout');
 
 //
