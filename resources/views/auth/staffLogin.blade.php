@@ -9,6 +9,7 @@
 	</button>
 	<div class="dropdown-menu dropdown-menu">
 		<a class="dropdown-item" href="{{url('/')}}">Admin Login</a>
+		<a class="dropdown-item" href="{{url('/company/login')}}">Company Login</a>
 		<a class="dropdown-item" href="{{url('/student/login')}}">Student Login</a>
 	</div>
 	</div>
