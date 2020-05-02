@@ -9,6 +9,9 @@
 <a class="dropdown-item" href="{{route('student.edit', Auth::user()->id)}}">
 	Edit Profile
 </a>
+<a class="dropdown-item" href="{{route('student.job.index')}}">
+	Jobs
+</a>
 <a class="dropdown-item" href="{{route('student.result.index', Auth::user()->id)}}">
 	Results
 </a>
@@ -105,6 +108,23 @@
 								</tr>
 							</tfoot>
 						</table>
+						<script>
+						$(document).ready(function(){
+							var intTotal = {{$sem1Int->total}};
+							var intOutof = {{$sem1Int->outOf}};
+							var extOutof = {{$sem1Ext->outOf}};
+							//alert(intOutof);
+							var extTotal = {{$sem1Ext->total}};
+							var total = intTotal + extTotal;
+							var outOf = intOutof + extOutof;
+							//alert(total);
+							document.getElementById('totalSem1').innerHTML = total+" / "+outOf;
+							var perc = total*100/outOf;
+							var cgpa = perc/9.5;
+							document.getElementById('cgpaSem1').innerHTML = cgpa.toFixed(2);
+							console.log(cgpa);
+						});
+						</script>
 						@endforeach
 					@endforeach
 					@endif
@@ -117,21 +137,5 @@
 @endsection
 
 @section('custom-js')
-<script>
-$(document).ready(function(){
-	var intTotal = {{$sem1Int->total}};
-	var intOutof = {{$sem1Int->outOf}};
-	var extOutof = {{$sem1Ext->outOf}};
-	//alert(intOutof);
-	var extTotal = {{$sem1Ext->total}};
-	var total = intTotal + extTotal;
-	var outOf = intOutof + extOutof;
-	//alert(total);
-	document.getElementById('totalSem1').innerHTML = total+" / "+outOf;
-	var perc = total*100/outOf;
-	var cgpa = perc/9.5;
-	document.getElementById('cgpaSem1').innerHTML = cgpa.toFixed(2);
-	console.log(cgpa);
-});
-</script>
+
 @endsection
