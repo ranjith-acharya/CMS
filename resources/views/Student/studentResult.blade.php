@@ -9,6 +9,9 @@
 <a class="dropdown-item" href="{{route('student.edit', Auth::user()->id)}}">
 	Edit Profile
 </a>
+<a class="dropdown-item" href="{{route('student.job.index')}}">
+	Jobs
+</a>
 <a class="dropdown-item" href="{{route('student.result.index', Auth::user()->id)}}">
 	Results
 </a>
@@ -505,6 +508,18 @@
 					</table>
 				</div>
 			</div>
+			<div class="container table-responsive mb-4">
+				<center><table class="table table-bordered col-md-4">
+					<thead class="text-center">
+						<th>Avg. CGPA</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td id="avgCGPA" class="text-center"></td>
+						</tr>
+					</tbody>
+				</table></center>
+			</div>
         </div>
     </div>
 </div>
@@ -526,15 +541,305 @@ var sem6Cgpa = parseFloat(document.getElementById('cgpaSem6').innerHTML);
 // alert(sem4Cgpa);
 // alert(sem5Cgpa);
 // alert(sem6Cgpa);
-	var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
-	alert(totalCgpa);
-	var averageCgpa = totalCgpa / 6;
-	var avgCgpa = (averageCgpa).toFixed(2);
-	alert(avgCgpa);
-	var cgpa = avgCgpa * 7.1 + 12;
-	alert(cgpa);
-// if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
-	// alert(totalCgpa);
-// }
+	// var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+	// //alert(totalCgpa);
+	// var averageCgpa = totalCgpa / 6;
+	// var avgCgpa = (averageCgpa).toFixed(2);
+	// //alert(avgCgpa);
+	// var overCgpa = avgCgpa * 7.1 + 12;
+	// //alert(overCgpa);
+	// var sgpa = overCgpa / 9.5;
+	// var cgpa = (sgpa).toFixed(2);
+	// alert(cgpa);
+	if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa > 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa > 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa > 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa > 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa < 7.00 && sem3Cgpa > 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa > 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa > 7.00 && sem3Cgpa > 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa > 7.00 && sem3Cgpa < 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa > 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa > 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa > 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa > 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa > 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa > 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa > 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa > 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa > 7.00 && sem3Cgpa > 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa < 7.00 && sem3Cgpa > 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa > 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa < 7.00 && sem2Cgpa < 7.00 && sem3Cgpa < 7.00 && sem4Cgpa < 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa > 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa > 7.00 && sem3Cgpa > 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa < 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa > 7.00 && sem3Cgpa > 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa < 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 12;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
+	else if(sem1Cgpa > 7.00 && sem2Cgpa > 7.00 && sem3Cgpa > 7.00 && sem4Cgpa > 7.00 &&sem5Cgpa > 7.00 &sem6Cgpa > 7.00){
+		var totalCgpa = (sem1Cgpa + sem2Cgpa + sem3Cgpa + sem4Cgpa + sem5Cgpa + sem6Cgpa).toFixed(2);
+		var averageCgpa = totalCgpa / 6;
+		var avgCgpa = (averageCgpa).toFixed(2);
+		var overCgpa = avgCgpa * 7.1 + 11;
+		var sgpa = overCgpa / 9.5;
+		var cgpa = (sgpa).toFixed(2);
+		//alert(cgpa);
+		document.getElementById("avgCGPA").innerHTML = cgpa;
+	}
 </script>
 @endsection
