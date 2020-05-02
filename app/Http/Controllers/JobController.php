@@ -78,7 +78,8 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = Job::find($id);
+		return view('company.companyJobShow', compact('job', 'id'));
     }
 
     /**
@@ -89,7 +90,8 @@ class JobController extends Controller
      */
     public function edit($id)
     {
-        //
+        $job = Job::find($id);
+		return view('company.companyJobEdit', compact('job', 'id'));
     }
 
     /**
@@ -101,7 +103,28 @@ class JobController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+			'title' => 'required',
+			'stipend' => 'required',
+			'minPointer' => 'required',
+			'description' => 'required',
+		],[
+			'title.required' => 'Please provide Title',
+			'stipend.required' => 'Please provide Package',
+			'minPointer.required' => 'Please provide Required Pointer',
+			'description.required' => 'Please provide Description',
+		]);
+		
+		$job = Job::find($id);
+		
+		$job -> title = $request->get('title');
+		$job -> stipend = $request->get('stipend');
+		$job -> minPointer = $request->get('minPointer');
+		$job -> description = $request->get('description');
+		
+		$job -> save();
+		
+		return redirect()->back()->with('success', 'Job Updated..!!');
     }
 
     /**
