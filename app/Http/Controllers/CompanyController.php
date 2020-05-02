@@ -60,7 +60,8 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        //
+		$company = Company::find($id);
+        return view('company.companyEdit', compact('company', 'id'));
     }
 
     /**
@@ -72,7 +73,21 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+			'name' => 'required',
+		],[
+			'name.required' => 'Please provide a Name',
+		]);
+		$company = Company::find($id);
+		$company -> name = $request->get('name');
+		if($request->hasfile('avatar')){
+			$file = $request->file('avatar');
+			$name = time().'.'.$file->getClientOriginalExtension();
+			$file -> move(public_path().'/img/company', $name);
+			$company -> avatar = $name;
+		}
+		$company -> save();
+		return redirect()->route('company.index')->with('success', 'Profile Updated.!!');
     }
 
     /**
