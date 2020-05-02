@@ -9,6 +9,9 @@
 <a class="dropdown-item" href="{{route('company.edit', Auth::user()->id)}}">
 	Edit Profile
 </a>
+<a class="dropdown-item" href="{{route('companies.job.index', Auth::user()->id)}}">
+Jobs
+</a>
 @endsection
 
 @section('content')
