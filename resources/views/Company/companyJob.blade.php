@@ -34,6 +34,7 @@ Jobs
 						<tr>
 							<th>Job ID</th>
 							<th>Job Name</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -41,6 +42,15 @@ Jobs
 						<tr>
 							<td>{{$job->id}}</td>
 							<td class="text-capitalize">{{$job->title}}</td>
+							<td>
+								<div class="dropdown">
+									<button type="button" class="btn btn-sm btn-primary dropdown-toggle float-right" data-toggle="dropdown">Actions</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="{{route('job.edit', $job->id)}}">Edit</a>
+										<a class="dropdown-item" href="{{route('job.show', $job->id)}}">View</a>
+									</div>
+								</div>
+							</td>
 						</tr>
 						@endforeach
 					</tbody>
@@ -48,6 +58,7 @@ Jobs
 						<tr>
 							<th>Job ID</th>
 							<th>Job Name</th>
+							<th>Action</th>
 						</tr>
 					</tfoot>
 				</table>
