@@ -128,4 +128,6 @@ Route::post('/company/new', 'Auth\CompanyLoginController@store')->name('company.
 Route::resource('/company', 'CompanyController');
 Route::get('/company/logout', 'Auth\CompanyLoginController@logout')->name('company.logout');
 
+//Routing for Job
+Route::resource('companies.job', 'JobController')->shallow();
 //
