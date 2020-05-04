@@ -111,6 +111,7 @@ Route::get('/student/result/sem7/marks', 'StudentResultController@sem7')->name('
 Route::get('/student/result/sem8/marks', 'StudentResultController@sem8')->name('student.result.sem8');
 
 Route::get('/student/company/job', 'StudentJobController@index')->name('student.job.index');
+Route::get('/student/company/job/{job}', 'StudentJobController@show')->name('student.job.show');
 
 Route::get('/student/logout', 'Auth\StudentLoginController@logout')->name('student.logout');
 //
