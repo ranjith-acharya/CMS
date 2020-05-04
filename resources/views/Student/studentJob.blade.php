@@ -1,6 +1,6 @@
 @extends('layouts.customStudent-app')
 
-@section('custom-title') Home - {{Auth::user()->firstName}}&nbsp;{{Auth::user()->lastName}}@endsection
+@section('custom-title') Jobs - {{Auth::user()->firstName}}&nbsp;{{Auth::user()->lastName}}@endsection
 
 @section('options')
 <a class="dropdown-item" href="{{url('/student')}}">
@@ -55,8 +55,7 @@
 								<div class="dropdown">
 									<button type="button" class="btn btn-sm btn-primary dropdown-toggle float-right" data-toggle="dropdown">Actions</button>
 									<div class="dropdown-menu">
-										<a class="dropdown-item" href="{{route('job.edit', $job->id)}}">Edit</a>
-										<a class="dropdown-item" href="{{route('job.show', $job->id)}}">View</a>
+										<a class="dropdown-item" href="{{route('student.job.show', $job->id)}}">View</a>
 									</div>
 								</div>
 							</td>
